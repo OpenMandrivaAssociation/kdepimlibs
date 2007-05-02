@@ -51,6 +51,7 @@ Source: 	ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.b
 %define mini_release %mkrel 0.%branch_date.1
 BuildRequires: kdelibs4-devel >= %version-%mini_release
 BuildRequires:	openldap-devel
+BuildRequires:	boost-devel
 
 %description 
 This module includes libraries that are central to the development and
@@ -226,5 +227,4 @@ rm -fr %buildroot
 
 %_libdir/*.so
 %_datadir/apps/cmake/modules/*.cmake
-
 
