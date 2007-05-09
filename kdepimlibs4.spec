@@ -187,6 +187,11 @@ rm -fr %buildroot
 %_datadir/kde4/servicetypes/*.desktop
 %_datadir/config.kcfg/pimemoticons.kcfg
 
+%_datadir/apps/kconf_update/migrate-transports.pl
+%_datadir/config.kcfg/mailtransport.kcfg
+%_datadir/kde4/services/kcm_mailtransport.desktop
+
+
 %files -n %{lib_name}
 %defattr(-,root,root,-)
 %_libdir/kde4/*.so
@@ -227,4 +232,7 @@ rm -fr %buildroot
 
 %_libdir/*.so
 %_datadir/apps/cmake/modules/*.cmake
+
+%_includedir/mailtransport/*.h
+
 
