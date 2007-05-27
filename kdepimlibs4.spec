@@ -196,6 +196,7 @@ rm -fr %buildroot
 %_datadir/config.kcfg/pimemoticons.kcfg
 
 %_datadir/apps/kconf_update/migrate-transports.pl
+%_datadir/apps/kconf_update/mailtransports.upd
 %_datadir/config.kcfg/mailtransport.kcfg
 %_datadir/kde4/services/kcm_mailtransport.desktop
 
