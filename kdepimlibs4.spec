@@ -7,7 +7,7 @@
 %define _sysconfdir %_prefix/etc/
 %define _docdir %_datadir/doc/
 
-%define branch_date 20070502
+%define branch_date 20070527
 
 %define use_enable_final 0
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
@@ -96,10 +96,18 @@ browsing.
 
 
 %prep
+%if %branch
 %setup -q -nkdepimlibs-%version-%branch_date
+%else
+%setup -q -nkdepimlibs-%version
+%endif
 
 %build
+%if %branch
 cd $RPM_BUILD_DIR/kdepimlibs-%version-%branch_date
+%else
+cd $RPM_BUILD_DIR/kdepimlibs-%version
+%endif
 mkdir build
 cd build
 #use when we use standard %%prefix
