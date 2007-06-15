@@ -1,4 +1,4 @@
-%define revision 675345
+%define revision 675772
 
 %define use_enable_final 0
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
@@ -25,9 +25,9 @@ License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
 %if %branch
-Source: 	ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.%revision.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.%revision.tar.bz2
 %else
-Source: 	ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
