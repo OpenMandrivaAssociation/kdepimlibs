@@ -1,4 +1,4 @@
-%define revision 672993
+%define revision 675345
 
 %define use_enable_final 0
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
@@ -59,7 +59,6 @@ This packages contains all icons, config file etc...
 %defattr(-,root,root,-)
 %_kde_libdir/kde4/*
 %_kde_datadir/apps/*
-%_kde_datadir/autostart/kab2kabc.desktop
 %_kde_datadir/kde4/*
 %_datadir/dbus-1/interfaces/*
 
@@ -316,7 +315,20 @@ KDE 4 core library.
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications.
 Requires: kdelibs4-devel
-Provides: livkdepimlibs4-devel
+Provides: libkdepimlibs4-devel
+Requires: %libkabc = %version
+Requires: %libkblog = %version
+Requires: %libkabc_file_core = %version
+Requires: %libkcal = %version
+Requires: %libkimap = %version
+Requires: %libkldap = %version
+Requires: %libkmime = %version
+Requires: %libkpimutils = %version
+Requires: %libkresources = %version
+Requires: %libktnef = %version
+Requires: %libkxmlrpcclient = %version
+Requires: %libmailtransport = %version
+Requires: %libsyndication = %version
 
 %description devel
 This package includes the header files you will need to compile applications 
