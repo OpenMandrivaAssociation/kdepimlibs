@@ -1,4 +1,4 @@
-%define revision 680386
+%define revision 681120
 
 %define use_enable_final 0
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
@@ -18,8 +18,8 @@
 
 Name: kdepimlibs4
 Summary: K Desktop Environment - Libraries
-Version: 3.90.2
-Release: %mkrel 0.%revision
+Version: 3.91
+Release: %mkrel 0.%revision.1
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
