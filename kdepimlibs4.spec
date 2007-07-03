@@ -33,6 +33,7 @@ BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
+BuildRequires: gpgme-devel
 
 %description 
 This module includes libraries that are central to the development and
@@ -310,6 +311,83 @@ KDE 4 core library.
 %_kde_libdir/libsyndication.so.*
 
 #--------------------------------------------------------------------------------
+
+%define libqgpgme %mklibname qgpgme 5
+
+%package -n %libqgpgme
+Summary: KDE 4 core library
+Group: System/Libraries
+Obsoletes: %{_lib}kdepimlibs4
+
+%description -n %libqgpgme
+KDE 4 core library.
+
+%post -n %libqgpgme -p /sbin/ldconfig
+%postun -n %libqgpgme -p /sbin/ldconfig
+
+%files -n %libqgpgme
+%defattr(-,root,root)
+%_kde_libdir/libqgpgme.so.*
+
+#--------------------------------------------------------------------------------
+
+%define libgpgmepp %mklibname gpgmepp 5
+
+%package -n %libgpgmepp
+Summary: KDE 4 core library
+Group: System/Libraries
+Obsoletes: %{_lib}kdepimlibs4
+
+%description -n %libgpgmepp
+KDE 4 core library.
+
+%post -n %libgpgmepp -p /sbin/ldconfig
+%postun -n %libgpgmepp -p /sbin/ldconfig
+
+%files -n %libgpgmepp
+%defattr(-,root,root)
+%_kde_libdir/libgpgmepp.so.*
+
+#--------------------------------------------------------------------------------
+
+%define libkpimidentities %mklibname kpimidentities 5
+
+%package -n %libkpimidentities
+Summary: KDE 4 core library
+Group: System/Libraries
+Obsoletes: %{_lib}kdepimlibs4
+
+%description -n %libkpimidentities
+KDE 4 core library.
+
+%post -n %libkpimidentities -p /sbin/ldconfig
+%postun -n %libkpimidentities -p /sbin/ldconfig
+
+%files -n %libkpimidentities
+%defattr(-,root,root)
+%_kde_libdir/libkpimidentities.so.*
+
+#--------------------------------------------------------------------------------
+
+%define libkpgp-gpl %mklibname kpgp-gpl 5
+
+%package -n %libkpgp-gpl
+Summary: KDE 4 core library
+Group: System/Libraries
+Obsoletes: %{_lib}kdepimlibs4
+
+%description -n %libkpgp-gpl
+KDE 4 core library.
+
+%post -n %libkpgp-gpl -p /sbin/ldconfig
+%postun -n %libkpgp-gpl -p /sbin/ldconfig
+
+%files -n %libkpgp-gpl
+%defattr(-,root,root)
+%_kde_libdir/libkpgp-gpl.so.*
+
+#--------------------------------------------------------------------------------
+
 
 %package devel
 Group: Development/KDE and Qt
