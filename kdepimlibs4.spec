@@ -369,20 +369,20 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define libkpgp-gpl %mklibname kpgp-gpl 5
+%define libkpgp_gpl %mklibname kpgp-gpl 5
 
-%package -n %libkpgp-gpl
+%package -n %libkpgp_gpl
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
 
-%description -n %libkpgp-gpl
+%description -n %libkpgp_gpl
 KDE 4 core library.
 
-%post -n %libkpgp-gpl -p /sbin/ldconfig
-%postun -n %libkpgp-gpl -p /sbin/ldconfig
+%post -n %libkpgp_gpl -p /sbin/ldconfig
+%postun -n %libkpgp_gpl -p /sbin/ldconfig
 
-%files -n %libkpgp-gpl
+%files -n %libkpgp_gpl
 %defattr(-,root,root)
 %_kde_libdir/libkpgp-gpl.so.*
 
