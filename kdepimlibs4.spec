@@ -1,4 +1,4 @@
-%define revision 688639
+%define revision 689172
 
 %define use_enable_final 0
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
@@ -61,16 +61,18 @@ This packages contains all icons, config file etc...
 %_kde_libdir/kde4/*
 %_kde_datadir/apps/*
 %_kde_datadir/kde4/*
+%_kde_datadir/icons/*/*/*/*
 %_datadir/dbus-1/interfaces/*
 
 #------------------------------------------------	
 
-%define libkabc %mklibname kabc 5
+%define libkabc %mklibname kabc 4
 
 %package -n %libkabc
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kabc5
 
 %description -n %libkabc
 KDE 4 core library.
@@ -84,12 +86,33 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkblog %mklibname kblog 5
+%define libkleo %mklibname kleo 4
+
+%package -n %libkleo
+Summary: KDE 4 core library
+Group: System/Libraries
+Obsoletes: %{_lib}kdepimlibs4
+
+%description -n %libkleo
+KDE 4 core library.
+
+%post -n %libkleo -p /sbin/ldconfig
+%postun -n %libkleo -p /sbin/ldconfig
+
+%files -n %libkleo
+%defattr(-,root,root)
+%_kde_libdir/libkleo-gpl.so.*
+
+
+#------------------------------------------------	
+
+%define libkblog %mklibname kblog 4
 
 %package -n %libkblog
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kblog5
 
 %description -n %libkblog
 KDE 4 core library.
@@ -103,12 +126,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkabc_file_core %mklibname kabc_file_core 5
+%define libkabc_file_core %mklibname kabc_file_core 4
 
 %package -n %libkabc_file_core
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kabc_file_core5
 
 %description -n %libkabc_file_core
 KDE 4 core library.
@@ -122,12 +146,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkcal %mklibname kcal 5
+%define libkcal %mklibname kcal 4
 
 %package -n %libkcal
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kcal5
 
 %description -n %libkcal
 KDE 4 core library.
@@ -141,12 +166,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkimap %mklibname kimap 5
+%define libkimap %mklibname kimap 4
 
 %package -n %libkimap
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kimap5
 
 %description -n %libkimap
 KDE 4 core library.
@@ -160,12 +186,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkldap %mklibname kldap 5
+%define libkldap %mklibname kldap 4
 
 %package -n %libkldap
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kldap5
 
 %description -n %libkldap
 KDE 4 core library.
@@ -179,12 +206,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkmime %mklibname kmime 5
+%define libkmime %mklibname kmime 4
 
 %package -n %libkmime
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kmime5
 
 %description -n %libkmime
 KDE 4 core library.
@@ -198,12 +226,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkpimutils %mklibname kpimutils 5
+%define libkpimutils %mklibname kpimutils 4
 
 %package -n %libkpimutils
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kpimutils5
 
 %description -n %libkpimutils
 KDE 4 core library.
@@ -217,12 +246,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkresources %mklibname kresources 5
+%define libkresources %mklibname kresources 4
 
 %package -n %libkresources
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kresources5
 
 %description -n %libkresources
 KDE 4 core library.
@@ -236,12 +266,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libktnef %mklibname ktnef 5
+%define libktnef %mklibname ktnef 4
 
 %package -n %libktnef
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}ktnef5
 
 %description -n %libktnef
 KDE 4 core library.
@@ -255,12 +286,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libkxmlrpcclient %mklibname kxmlrpcclient 5
+%define libkxmlrpcclient %mklibname kxmlrpcclient 4
 
 %package -n %libkxmlrpcclient
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kxmlrpcclient5
 
 %description -n %libkxmlrpcclient
 KDE 4 core library.
@@ -274,12 +306,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libmailtransport %mklibname mailtransport 5
+%define libmailtransport %mklibname mailtransport 4
 
 %package -n %libmailtransport
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}mailtransport5
 
 %description -n %libmailtransport
 KDE 4 core library.
@@ -293,12 +326,13 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define libsyndication %mklibname syndication 5
+%define libsyndication %mklibname syndication 4
 
 %package -n %libsyndication
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}syndication5
 
 %description -n %libsyndication
 KDE 4 core library.
@@ -312,12 +346,13 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define libqgpgme %mklibname qgpgme 5
+%define libqgpgme %mklibname qgpgme 4
 
 %package -n %libqgpgme
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}qgpgme5
 
 %description -n %libqgpgme
 KDE 4 core library.
@@ -331,12 +366,13 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define libgpgmepp %mklibname gpgmepp 5
+%define libgpgmepp %mklibname gpgmepp 4
 
 %package -n %libgpgmepp
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}gpgmepp5
 
 %description -n %libgpgmepp
 KDE 4 core library.
@@ -350,12 +386,13 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define libkpimidentities %mklibname kpimidentities 5
+%define libkpimidentities %mklibname kpimidentities 4
 
 %package -n %libkpimidentities
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
+Obsoletes: %{_lib}kpimidentities5
 
 %description -n %libkpimidentities
 KDE 4 core library.
