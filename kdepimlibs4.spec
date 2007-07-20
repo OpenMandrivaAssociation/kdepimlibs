@@ -1,20 +1,7 @@
-%define revision 689172
-
-%define use_enable_final 0
-%{?_no_enable_final: %{expand: %%global use_enable_final 0}}
+%define revision 690318
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
-
-%define use_enable_pie 1
-%{?_no_enable_pie: %{expand: %%global use_enable_pie 0}}
-
-%define unstable 1
-%{?_unstable: %{expand: %%global unstable 1}}
-
-%if %unstable
-%define dont_strip 1
-%endif
 
 Name: kdepimlibs4
 Summary: K Desktop Environment - Libraries
@@ -443,17 +430,7 @@ browsing.
 %setup -q -n kdepimlibs-%version
 
 %build
-
-%cmake_kde4 \
-%if %use_enable_final
-      -DKDE4_ENABLE_FINAL=ON \
-%endif
-%if %use_enable_pie
-      -DKDE4_ENABLE_FPIE=ON \
-%endif
-%if %unstable
-      -DCMAKE_BUILD_TYPE=debugfull 
-%endif
+%cmake_kde4 
 
 %make
 
