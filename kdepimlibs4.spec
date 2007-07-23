@@ -1,4 +1,4 @@
-%define revision 690318
+%define revision 691459
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
@@ -48,7 +48,6 @@ This packages contains all icons, config file etc...
 %_kde_libdir/kde4/*
 %_kde_datadir/apps/*
 %_kde_datadir/kde4/*
-%_kde_datadir/icons/*/*/*/*
 %_datadir/dbus-1/interfaces/*
 
 #------------------------------------------------	
@@ -70,26 +69,6 @@ KDE 4 core library.
 %files -n %libkabc
 %defattr(-,root,root)
 %_kde_libdir/libkabc.so.*
-
-#------------------------------------------------	
-
-%define libkleo %mklibname kleo 4
-
-%package -n %libkleo
-Summary: KDE 4 core library
-Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-
-%description -n %libkleo
-KDE 4 core library.
-
-%post -n %libkleo -p /sbin/ldconfig
-%postun -n %libkleo -p /sbin/ldconfig
-
-%files -n %libkleo
-%defattr(-,root,root)
-%_kde_libdir/libkleo-gpl.so.*
-
 
 #------------------------------------------------	
 
@@ -340,6 +319,7 @@ Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
 Obsoletes: %{_lib}qgpgme5
+Obsoletes: %{_lib}kleo4
 
 %description -n %libqgpgme
 KDE 4 core library.
@@ -353,13 +333,14 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define libgpgmepp %mklibname gpgmepp 4
+%define libgpgmepp %mklibname gpgme++ 4
 
 %package -n %libgpgmepp
 Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4
 Obsoletes: %{_lib}gpgmepp5
+Obsoletes: %{_lib}gpgmepp4
 
 %description -n %libgpgmepp
 KDE 4 core library.
@@ -369,7 +350,7 @@ KDE 4 core library.
 
 %files -n %libgpgmepp
 %defattr(-,root,root)
-%_kde_libdir/libgpgmepp.so.*
+%_kde_libdir/libgpgme++.so.*
 
 #--------------------------------------------------------------------------------
 
