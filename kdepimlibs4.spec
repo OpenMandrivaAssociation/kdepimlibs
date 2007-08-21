@@ -1,4 +1,4 @@
-%define revision 700869
+%define revision 702661
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
