@@ -1,4 +1,4 @@
-%define revision 704181
+%define revision 705307
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
@@ -350,7 +350,7 @@ KDE 4 core library.
 
 %files -n %libgpgmepp
 %defattr(-,root,root)
-%_kde_libdir/libgpgme++.so.*
+%_kde_libdir/libgpgme+*.so.*
 
 #--------------------------------------------------------------------------------
 
