@@ -1,4 +1,4 @@
-%define revision 711783
+%define revision 711801
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
@@ -39,6 +39,10 @@ scheduling and even sticky notes.
 Group: Development/KDE and Qt
 Summary: Config file and icons file for %name.
 Obsoletes: kdepimlibs4-common
+Obsoletes: kdepim4-ioslaves
+Provides: kio4-imap
+Provides: kio4-ldap
+Provides: kio4-pop3
 
 %description core
 This packages contains all icons, config file etc...
