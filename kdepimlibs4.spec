@@ -53,6 +53,7 @@ This packages contains all icons, config file etc...
 %_kde_datadir/apps/*
 %_kde_datadir/kde4/*
 %_datadir/dbus-1/interfaces/*
+%exclude %_kde_datadir/apps/cmake
 
 #------------------------------------------------	
 
@@ -409,7 +410,7 @@ browsing.
 %defattr(-,root,root,-)
 %_kde_prefix/include/*
 %_kde_libdir/*.so
-%_kde_datadir/apps/cmake/modules/*.cmake
+%_kde_datadir/apps/cmake/*/*
 %_kde_datadir/config.kcfg/*
 
 #--------------------------------------------------------------------------------
