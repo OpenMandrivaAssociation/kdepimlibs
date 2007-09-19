@@ -1,4 +1,4 @@
-%define revision 712527
+%define revision 714098
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
@@ -38,8 +38,8 @@ scheduling and even sticky notes.
 %package core
 Group: Development/KDE and Qt
 Summary: Config file and icons file for %name.
-Obsoletes: kdepimlibs4-common
-Obsoletes: kdepim4-ioslaves
+Obsoletes: kdepimlibs4-common < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: kdepim4-ioslaves < 3.93.0-0.714098.1mdv2008.0
 Provides: kio4-imap
 Provides: kio4-ldap
 Provides: kio4-pop3
@@ -62,8 +62,8 @@ This packages contains all icons, config file etc...
 %package -n %libkabc
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kabc5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kabc5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkabc
 KDE 4 core library.
@@ -82,8 +82,8 @@ KDE 4 core library.
 %package -n %libkblog
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kblog5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kblog5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkblog
 KDE 4 core library.
@@ -102,8 +102,8 @@ KDE 4 core library.
 %package -n %libkabc_file_core
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kabc_file_core5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kabc_file_core5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkabc_file_core
 KDE 4 core library.
@@ -122,8 +122,8 @@ KDE 4 core library.
 %package -n %libkcal
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kcal5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kcal5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkcal
 KDE 4 core library.
@@ -142,8 +142,8 @@ KDE 4 core library.
 %package -n %libkimap
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kimap5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kimap5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkimap
 KDE 4 core library.
@@ -162,8 +162,8 @@ KDE 4 core library.
 %package -n %libkldap
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kldap5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kldap5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkldap
 KDE 4 core library.
@@ -182,8 +182,8 @@ KDE 4 core library.
 %package -n %libkmime
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kmime5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kmime5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkmime
 KDE 4 core library.
@@ -202,8 +202,8 @@ KDE 4 core library.
 %package -n %libkpimutils
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kpimutils5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kpimutils5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkpimutils
 KDE 4 core library.
@@ -222,8 +222,8 @@ KDE 4 core library.
 %package -n %libkresources
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kresources5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kresources5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkresources
 KDE 4 core library.
@@ -242,8 +242,8 @@ KDE 4 core library.
 %package -n %libktnef
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}ktnef5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}ktnef5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libktnef
 KDE 4 core library.
@@ -262,8 +262,8 @@ KDE 4 core library.
 %package -n %libkxmlrpcclient
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kxmlrpcclient5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kxmlrpcclient5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkxmlrpcclient
 KDE 4 core library.
@@ -282,8 +282,8 @@ KDE 4 core library.
 %package -n %libmailtransport
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}mailtransport5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}mailtransport5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libmailtransport
 KDE 4 core library.
@@ -302,8 +302,8 @@ KDE 4 core library.
 %package -n %libsyndication
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}syndication5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}syndication5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libsyndication
 KDE 4 core library.
@@ -322,9 +322,9 @@ KDE 4 core library.
 %package -n %libqgpgme
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}qgpgme5
-Obsoletes: %{_lib}kleo4
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}qgpgme5 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kleo4 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libqgpgme
 KDE 4 core library.
@@ -343,9 +343,9 @@ KDE 4 core library.
 %package -n %libgpgmepp
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}gpgmepp5
-Obsoletes: %{_lib}gpgmepp4
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}gpgmepp5 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}gpgmepp4 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libgpgmepp
 KDE 4 core library.
@@ -364,8 +364,8 @@ KDE 4 core library.
 %package -n %libkpimidentities
 Summary: KDE 4 core library
 Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4
-Obsoletes: %{_lib}kpimidentities5
+Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1mdv2008.0
+Obsoletes: %{_lib}kpimidentities5 < 3.93.0-0.714098.1mdv2008.0
 
 %description -n %libkpimidentities
 KDE 4 core library.
@@ -429,6 +429,8 @@ rm -fr %buildroot
 cd build
 
 make DESTDIR=%buildroot install
+rm -f %buildroot/%{_kde_libdir}/Gpgmepp/GpgmeppConfig.cmake
+rm -f %buildroot/%{_kde_libdir}/Gpgmepp/GpgmeppLibraryDepends.cmake
 
 %clean
 rm -fr %buildroot
