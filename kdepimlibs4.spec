@@ -6,7 +6,7 @@
 Name: kdepimlibs4
 Summary: K Desktop Environment - Libraries
 Version: 3.93.0
-Release: %mkrel 0.%revision.1
+Release: %mkrel 0.%revision.2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
