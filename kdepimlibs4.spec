@@ -37,7 +37,7 @@ scheduling and even sticky notes.
 
 %package core
 Group: Development/KDE and Qt
-Summary: Config file and icons file for %name.
+Summary: Config file and icons file for %name
 Obsoletes: kdepimlibs4-common < 3.93.0-0.714098.1
 Obsoletes: kdepim4-ioslaves < 3.93.0-0.714098.1
 Provides: kio4-imap
@@ -381,7 +381,7 @@ KDE 4 core library.
 
 %package devel
 Group: Development/KDE and Qt
-Summary: Header files and documentation for compiling KDE applications.
+Summary: Header files and documentation for compiling KDE applications
 Requires: kdelibs4-devel
 Provides: libkdepimlibs4-devel
 Requires: %libkabc = %version
