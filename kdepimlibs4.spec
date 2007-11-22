@@ -1,11 +1,11 @@
-%define revision 737106
+%define revision 739809
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
 
 Name: kdepimlibs4
 Summary: K Desktop Environment - Libraries
-Version: 3.96.0
+Version: 3.96.1
 Release: %mkrel 0.%revision.1
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -411,6 +411,7 @@ browsing.
 %_kde_prefix/include/*
 %_kde_libdir/*.so
 %_kde_datadir/apps/cmake/*/*
+%_kde_libdir/gpgmepp/*.cmake
 %_kde_datadir/config.kcfg/*
 
 #--------------------------------------------------------------------------------
