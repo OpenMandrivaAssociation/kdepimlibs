@@ -4,7 +4,7 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 Name: kdepimlibs4
-Summary: K Desktop Environment - Libraries
+Summary: Libraries of the KDE-PIM project
 Version: 3.96.1
 Release: %mkrel 0.%revision.1
 Group: Graphical desktop/KDE
