@@ -1,11 +1,11 @@
-%define revision 745183
+%define revision 746706
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 3.97.0
+Version: 3.97.1
 Release: %mkrel 0.%revision.1
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
