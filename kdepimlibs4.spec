@@ -6,18 +6,15 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.0.0
-%if %branch
-Release: %mkrel 0.%revision.1
-%else
-Release: %mkrel 1
-%endif
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
 %if %branch
+Release: %mkrel 0.%revision.1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.%revision.tar.bz2
 %else
+Release: %mkrel 1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
 BuildRequires: kde4-macros
@@ -49,7 +46,7 @@ Provides: kio4-ldap
 Provides: kio4-pop3
 
 %description core
-This packages contains all icons, config file etc...
+This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
 %defattr(-,root,root,-)
