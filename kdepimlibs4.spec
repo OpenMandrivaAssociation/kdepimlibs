@@ -58,7 +58,8 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 
 #------------------------------------------------	
 
-%define libkabc %mklibname kabc 4
+%define kabc_major 4
+%define libkabc %mklibname kabc %kabc_major
 
 %package -n %libkabc
 Summary: KDE 4 core library
@@ -74,11 +75,12 @@ KDE 4 core library.
 
 %files -n %libkabc
 %defattr(-,root,root)
-%_kde_libdir/libkabc.so.*
+%_kde_libdir/libkabc.so.%{kabc_major}*
 
 #------------------------------------------------	
 
-%define libkblog %mklibname kblog 4
+%define kblog_major 4
+%define libkblog %mklibname kblog %{kblog_major}
 
 %package -n %libkblog
 Summary: KDE 4 core library
@@ -94,11 +96,12 @@ KDE 4 core library.
 
 %files -n %libkblog
 %defattr(-,root,root)
-%_kde_libdir/libkblog.so.*
+%_kde_libdir/libkblog.so.%{kblog_major}*
 
 #------------------------------------------------	
 
-%define libkabc_file_core %mklibname kabc_file_core 4
+%define kabc_file_core_major 4
+%define libkabc_file_core %mklibname kabc_file_core %{kabc_file_core_major}
 
 %package -n %libkabc_file_core
 Summary: KDE 4 core library
@@ -114,11 +117,12 @@ KDE 4 core library.
 
 %files -n %libkabc_file_core
 %defattr(-,root,root)
-%_kde_libdir/libkabc_file_core.so.*
+%_kde_libdir/libkabc_file_core.so.%{kabc_file_core_major}*
 
 #------------------------------------------------	
 
-%define libkcal %mklibname kcal 4
+%define kcal_major 4
+%define libkcal %mklibname kcal %{kcal_major}
 
 %package -n %libkcal
 Summary: KDE 4 core library
@@ -134,11 +138,12 @@ KDE 4 core library.
 
 %files -n %libkcal
 %defattr(-,root,root)
-%_kde_libdir/libkcal.so.*
+%_kde_libdir/libkcal.so.%{kcal_major}*
 
 #------------------------------------------------	
 
-%define libkimap %mklibname kimap 4
+%define kimap_major 4
+%define libkimap %mklibname kimap %{kimap_major}
 
 %package -n %libkimap
 Summary: KDE 4 core library
@@ -154,11 +159,12 @@ KDE 4 core library.
 
 %files -n %libkimap
 %defattr(-,root,root)
-%_kde_libdir/libkimap.so.*
+%_kde_libdir/libkimap.so.%{kimap_major}*
 
 #------------------------------------------------	
 
-%define libkldap %mklibname kldap 4
+%define kldap_major 4
+%define libkldap %mklibname kldap %{kldap_major}
 
 %package -n %libkldap
 Summary: KDE 4 core library
@@ -174,11 +180,12 @@ KDE 4 core library.
 
 %files -n %libkldap
 %defattr(-,root,root)
-%_kde_libdir/libkldap.so.*
+%_kde_libdir/libkldap.so.%{kldap_major}*
 
 #------------------------------------------------	
 
-%define libkmime %mklibname kmime 4
+%define kmime_major 4
+%define libkmime %mklibname kmime %{kmime_major}
 
 %package -n %libkmime
 Summary: KDE 4 core library
@@ -194,11 +201,12 @@ KDE 4 core library.
 
 %files -n %libkmime
 %defattr(-,root,root)
-%_kde_libdir/libkmime.so.*
+%_kde_libdir/libkmime.so.%{kmime_major}*
 
 #------------------------------------------------	
 
-%define libkpimutils %mklibname kpimutils 4
+%define kpimutils_major 4
+%define libkpimutils %mklibname kpimutils %{kpimutils_major}
 
 %package -n %libkpimutils
 Summary: KDE 4 core library
@@ -214,11 +222,12 @@ KDE 4 core library.
 
 %files -n %libkpimutils
 %defattr(-,root,root)
-%_kde_libdir/libkpimutils.so.*
+%_kde_libdir/libkpimutils.so.%{kpimutils_major}*
 
 #------------------------------------------------	
 
-%define libkresources %mklibname kresources 4
+%define kresources_major 4
+%define libkresources %mklibname kresources %{kresources_major}
 
 %package -n %libkresources
 Summary: KDE 4 core library
@@ -234,11 +243,12 @@ KDE 4 core library.
 
 %files -n %libkresources
 %defattr(-,root,root)
-%_kde_libdir/libkresources.so.*
+%_kde_libdir/libkresources.so.%{kresources_major}*
 
 #------------------------------------------------	
 
-%define libktnef %mklibname ktnef 4
+%define ktnef_major 4
+%define libktnef %mklibname ktnef %{ktnef_major}
 
 %package -n %libktnef
 Summary: KDE 4 core library
@@ -254,11 +264,12 @@ KDE 4 core library.
 
 %files -n %libktnef
 %defattr(-,root,root)
-%_kde_libdir/libktnef.so.*
+%_kde_libdir/libktnef.so.%{ktnef_major}*
 
 #------------------------------------------------	
 
-%define libkxmlrpcclient %mklibname kxmlrpcclient 4
+%define kxmlrpcclient_major 4
+%define libkxmlrpcclient %mklibname kxmlrpcclient %{kxmlrpcclient_major}
 
 %package -n %libkxmlrpcclient
 Summary: KDE 4 core library
@@ -274,11 +285,12 @@ KDE 4 core library.
 
 %files -n %libkxmlrpcclient
 %defattr(-,root,root)
-%_kde_libdir/libkxmlrpcclient.so.*
+%_kde_libdir/libkxmlrpcclient.so.%{kxmlrpcclient_major}*
 
 #------------------------------------------------	
 
-%define libmailtransport %mklibname mailtransport 4
+%define mailtransport_major 4
+%define libmailtransport %mklibname mailtransport %{mailtransport_major}
 
 %package -n %libmailtransport
 Summary: KDE 4 core library
@@ -294,11 +306,12 @@ KDE 4 core library.
 
 %files -n %libmailtransport
 %defattr(-,root,root)
-%_kde_libdir/libmailtransport.so.*
+%_kde_libdir/libmailtransport.so.%{mailtransport_major}*
 
 #------------------------------------------------	
 
-%define libsyndication %mklibname syndication 4
+%define syndication_major 4
+%define libsyndication %mklibname syndication %{syndication_major}
 
 %package -n %libsyndication
 Summary: KDE 4 core library
@@ -314,11 +327,12 @@ KDE 4 core library.
 
 %files -n %libsyndication
 %defattr(-,root,root)
-%_kde_libdir/libsyndication.so.*
+%_kde_libdir/libsyndication.so.%{syndication_major}*
 
 #--------------------------------------------------------------------------------
 
-%define libqgpgme %mklibname qgpgme 4
+%define qgpgme_major 4
+%define libqgpgme %mklibname qgpgme %{qgpgme_major}
 
 %package -n %libqgpgme
 Summary: KDE 4 core library
@@ -335,11 +349,12 @@ KDE 4 core library.
 
 %files -n %libqgpgme
 %defattr(-,root,root)
-%_kde_libdir/libqgpgme.so.*
+%_kde_libdir/libqgpgme.so.%{qgpgme_major}*
 
 #--------------------------------------------------------------------------------
 
-%define libgpgmepp %mklibname gpgme++ 4
+%define gpgme++_major 4
+%define libgpgmepp %mklibname gpgme++ %{gpgme++_major}
 
 %package -n %libgpgmepp
 Summary: KDE 4 core library
@@ -356,11 +371,12 @@ KDE 4 core library.
 
 %files -n %libgpgmepp
 %defattr(-,root,root)
-%_kde_libdir/libgpgme+*.so.*
+%_kde_libdir/libgpgme+*.so.%{gpgme++_major}*
 
 #--------------------------------------------------------------------------------
 
-%define libkpimidentities %mklibname kpimidentities 4
+%define kpimidentities_major 4
+%define libkpimidentities %mklibname kpimidentities %{kpimidentities_major}
 
 %package -n %libkpimidentities
 Summary: KDE 4 core library
@@ -376,7 +392,7 @@ KDE 4 core library.
 
 %files -n %libkpimidentities
 %defattr(-,root,root)
-%_kde_libdir/libkpimidentities.so.*
+%_kde_libdir/libkpimidentities.so.%{kpimidentities_major}*
 
 #--------------------------------------------------------------------------------
 
