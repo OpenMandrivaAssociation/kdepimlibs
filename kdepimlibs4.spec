@@ -1,22 +1,12 @@
-%define revision 751976
-
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
-
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.0.0
+Version: 4.0.1
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
-%if %branch
-Release: %mkrel 0.%revision.1
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.%revision.tar.bz2
-%else
 Release: %mkrel 1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
-%endif
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
 BuildRequires: openldap-devel
