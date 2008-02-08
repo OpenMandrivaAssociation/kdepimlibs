@@ -321,7 +321,7 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define qgpgme_major 4
+%define qgpgme_major 1
 %define libqgpgme %mklibname qgpgme %{qgpgme_major}
 
 %package -n %libqgpgme
@@ -343,8 +343,8 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define gpgme++_major 4
-%define libgpgmepp %mklibname gpgme++ %{gpgme++_major}
+%define gpgmepp_major 1
+%define libgpgmepp %mklibname gpgme++ %{gpgmepp_major}
 
 %package -n %libgpgmepp
 Summary: KDE 4 core library
@@ -361,7 +361,7 @@ KDE 4 core library.
 
 %files -n %libgpgmepp
 %defattr(-,root,root)
-%_kde_libdir/libgpgme+*.so.%{gpgme++_major}*
+%_kde_libdir/libgpgme+*.so.%{gpgmepp_major}*
 
 #--------------------------------------------------------------------------------
 
