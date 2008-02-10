@@ -5,7 +5,7 @@ Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
-Release: %mkrel 1
+Release: %mkrel 2
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
@@ -330,6 +330,7 @@ Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1
 Obsoletes: %{_lib}qgpgme5 < 3.93.0-0.714098.1
 Obsoletes: %{_lib}kleo4 < 3.93.0-0.714098.1
+Obsoletes: %{_lib}qgpgme4
 
 %description -n %libqgpgme
 KDE 4 core library.
@@ -351,7 +352,8 @@ Summary: KDE 4 core library
 Group: System/Libraries
 Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1
 Obsoletes: %{_lib}gpgmepp5 < 3.93.0-0.714098.1
-Obsoletes: %{_lib}gpgmepp4 < 3.93.0-0.714098.1
+Obsoletes: %{_lib}gpgmepp4
+Obsoletes: %{_lib}gpgme++4
 
 %description -n %libgpgmepp
 KDE 4 core library.
