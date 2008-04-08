@@ -1,6 +1,6 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.0.3
+Version: 4.0.68
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -385,6 +385,63 @@ KDE 4 core library.
 %files -n %libkpimidentities
 %defattr(-,root,root)
 %_kde_libdir/libkpimidentities.so.%{kpimidentities_major}*
+
+#------------------------------------------------	
+
+%define akonadi_kde_major 4
+%define libakonadi_kde %mklibname akonadi-kde %{akonadi_kde_major}
+
+%package -n %libakonadi_kde
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libakonadi_kde
+KDE 4 core library.
+
+%post -n %libakonadi_kde -p /sbin/ldconfig
+%postun -n %libakonadi_kde -p /sbin/ldconfig
+
+%files -n %libakonadi_kde
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-kde.so.%{akonadi_kde_major}*
+
+#------------------------------------------------	
+
+%define akonadi_kmime_major 4
+%define libakonadi_kmime %mklibname akonadi-kmime %{akonadi_kmime_major}
+
+%package -n %libakonadi_kmime
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libakonadi_kmime
+KDE 4 core library.
+
+%post -n %libakonadi_kmime -p /sbin/ldconfig
+%postun -n %libakonadi_kmime -p /sbin/ldconfig
+
+%files -n %libakonadi_kmime
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-kmime.so.%{akonadi_kmime_major}*
+
+#------------------------------------------------	
+
+%define akonadi_proto_major 4
+%define libakonadi_protocolinternals %mklibname akonadiprotocolinternals %{akonadi_proto_major}
+
+%package -n %libakonadi_protocolinternals
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libakonadi_protocolinternals
+KDE 4 core library.
+
+%post -n %libakonadi_protocolinternals -p /sbin/ldconfig
+%postun -n %libakonadi_protocolinternals -p /sbin/ldconfig
+
+%files -n %libakonadi_protocolinternals
+%defattr(-,root,root)
+%_kde_libdir/libakonadiprotocolinternals.so.%{akonadi_proto_major}*
 
 #--------------------------------------------------------------------------------
 
