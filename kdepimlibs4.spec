@@ -12,6 +12,7 @@ BuildRequires: kdelibs4-devel
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
+BuildRequires: akonadi-devel
 
 %description 
 This module includes libraries that are central to the development and
