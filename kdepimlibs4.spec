@@ -426,25 +426,6 @@ KDE 4 core library.
 
 #------------------------------------------------	
 
-%define akonadi_proto_major 4
-%define libakonadi_protocolinternals %mklibname akonadiprotocolinternals %{akonadi_proto_major}
-
-%package -n %libakonadi_protocolinternals
-Summary: KDE 4 core library
-Group: System/Libraries
-
-%description -n %libakonadi_protocolinternals
-KDE 4 core library.
-
-%post -n %libakonadi_protocolinternals -p /sbin/ldconfig
-%postun -n %libakonadi_protocolinternals -p /sbin/ldconfig
-
-%files -n %libakonadi_protocolinternals
-%defattr(-,root,root)
-%_kde_libdir/libakonadiprotocolinternals.so.%{akonadi_proto_major}*
-
-#--------------------------------------------------------------------------------
-
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
