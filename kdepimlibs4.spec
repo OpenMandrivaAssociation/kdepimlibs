@@ -1,11 +1,11 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.0.72
+Version: 4.0.73
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
-Release: %mkrel 2
+Release: %mkrel 1
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel
