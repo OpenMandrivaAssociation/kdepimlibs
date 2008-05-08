@@ -13,7 +13,6 @@ BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
 BuildRequires: akonadi-devel
-BuildRequires: automoc
 
 %description 
 This module includes libraries that are central to the development and
