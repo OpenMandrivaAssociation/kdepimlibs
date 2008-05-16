@@ -12,7 +12,7 @@ BuildRequires: kdelibs4-devel
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
-BuildRequires: akonadi-devel
+BuildRequires: akonadi-devel >= 0.80.0-3.208261.4
 BuildRequires: automoc
 
 %description 
