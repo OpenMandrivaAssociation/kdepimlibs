@@ -1,19 +1,18 @@
-Name: kdepimlibs4
-Summary: Libraries of the KDE-PIM project
-Version: 4.0.80
-Group: Graphical desktop/KDE
-License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
-BuildRoot: %_tmppath/%name-%version-%release-root
-URL: http://www.kde.org
-Release: %mkrel 1
+Name:          kdepimlibs4
+Summary:       Libraries of the KDE-PIM project
+Version:       4.0.80
+Group:         Graphical desktop/KDE
+License:       ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
+BuildRoot:     %_tmppath/%name-%version-%release-root
+URL:           http://www.kde.org
+Release:       %mkrel 1
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 BuildRequires: kde4-macros
-BuildRequires: kdelibs4-devel
+BuildRequires: kdelibs4-devel >= %version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
 BuildRequires: akonadi-devel >= 0.80.0-3.808261.4
-BuildRequires: automoc
 
 %description 
 This module includes libraries that are central to the development and
@@ -28,14 +27,14 @@ scheduling and even sticky notes.
 
 #--------------------------------------------------------------------------------
 
-%package core
-Group: Development/KDE and Qt
-Summary: Config file and icons file for %name
+%package   core
+Group:     Development/KDE and Qt
+Summary:   Config file and icons file for %name
 Obsoletes: kdepimlibs4-common < 3.93.0-0.714098.1
 Obsoletes: kdepim4-ioslaves < 3.93.0-0.714098.1
-Provides: kio4-imap
-Provides: kio4-ldap
-Provides: kio4-pop3
+Provides:  kio4-imap
+Provides:  kio4-ldap
+Provides:  kio4-pop3
 
 %description core
 This packages contains all icons, config file etc... of kdepimlibs4.
@@ -54,10 +53,10 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %define libkabc %mklibname kabc %kabc_major
 
 %package -n %libkabc
-Summary: KDE 4 core library
-Group: System/Libraries
-Obsoletes: %{_lib}kdepimlibs4 < 3.93.0-0.714098.1
-Obsoletes: %{_lib}kabc5 < 3.93.0-0.714098.1
+Summary:    KDE 4 core library
+Group:      System/Libraries
+Obsoletes:  %{_lib}kdepimlibs4 < 3.93.0-0.714098.1
+Obsoletes:  %{_lib}kabc5 < 3.93.0-0.714098.1
 
 %description -n %libkabc
 KDE 4 core library.
