@@ -61,8 +61,12 @@ Obsoletes:  %{_lib}kabc5 < 3.93.0-0.714098.1
 %description -n %libkabc
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkabc -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkabc -p /sbin/ldconfig
+%endif
 
 %files -n %libkabc
 %defattr(-,root,root)
@@ -82,8 +86,12 @@ Obsoletes: %{_lib}kblog5 < 3.93.0-0.714098.1
 %description -n %libkblog
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkblog -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkblog -p /sbin/ldconfig
+%endif
 
 %files -n %libkblog
 %defattr(-,root,root)
@@ -103,8 +111,12 @@ Obsoletes: %{_lib}kabc_file_core5 < 3.93.0-0.714098.1
 %description -n %libkabc_file_core
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkabc_file_core -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkabc_file_core -p /sbin/ldconfig
+%endif
 
 %files -n %libkabc_file_core
 %defattr(-,root,root)
@@ -124,8 +136,12 @@ Obsoletes: %{_lib}kcal5 < 3.93.0-0.714098.1
 %description -n %libkcal
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkcal -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkcal -p /sbin/ldconfig
+%endif
 
 %files -n %libkcal
 %defattr(-,root,root)
@@ -145,8 +161,12 @@ Obsoletes: %{_lib}kimap5 < 3.93.0-0.714098.1
 %description -n %libkimap
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkimap -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkimap -p /sbin/ldconfig
+%endif
 
 %files -n %libkimap
 %defattr(-,root,root)
@@ -166,8 +186,12 @@ Obsoletes: %{_lib}kldap5 < 3.93.0-0.714098.1
 %description -n %libkldap
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkldap -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkldap -p /sbin/ldconfig
+%endif
 
 %files -n %libkldap
 %defattr(-,root,root)
@@ -187,8 +211,12 @@ Obsoletes: %{_lib}kmime5 < 3.93.0-0.714098.1
 %description -n %libkmime
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkmime -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkmime -p /sbin/ldconfig
+%endif
 
 %files -n %libkmime
 %defattr(-,root,root)
@@ -208,8 +236,12 @@ Obsoletes: %{_lib}kpimutils5 < 3.93.0-0.714098.1
 %description -n %libkpimutils
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkpimutils -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkpimutils -p /sbin/ldconfig
+%endif
 
 %files -n %libkpimutils
 %defattr(-,root,root)
@@ -229,8 +261,12 @@ Obsoletes: %{_lib}kresources5 < 3.93.0-0.714098.1
 %description -n %libkresources
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkresources -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkresources -p /sbin/ldconfig
+%endif
 
 %files -n %libkresources
 %defattr(-,root,root)
@@ -250,8 +286,12 @@ Obsoletes: %{_lib}ktnef5 < 3.93.0-0.714098.1
 %description -n %libktnef
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libktnef -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libktnef -p /sbin/ldconfig
+%endif
 
 %files -n %libktnef
 %defattr(-,root,root)
@@ -271,8 +311,12 @@ Obsoletes: %{_lib}kxmlrpcclient5 < 3.93.0-0.714098.1
 %description -n %libkxmlrpcclient
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkxmlrpcclient -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkxmlrpcclient -p /sbin/ldconfig
+%endif
 
 %files -n %libkxmlrpcclient
 %defattr(-,root,root)
@@ -292,8 +336,12 @@ Obsoletes: %{_lib}mailtransport5 < 3.93.0-0.714098.1
 %description -n %libmailtransport
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libmailtransport -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libmailtransport -p /sbin/ldconfig
+%endif
 
 %files -n %libmailtransport
 %defattr(-,root,root)
@@ -313,8 +361,12 @@ Obsoletes: %{_lib}syndication5 < 3.93.0-0.714098.1
 %description -n %libsyndication
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libsyndication -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libsyndication -p /sbin/ldconfig
+%endif
 
 %files -n %libsyndication
 %defattr(-,root,root)
@@ -336,8 +388,12 @@ Obsoletes: %{_lib}qgpgme4
 %description -n %libqgpgme
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libqgpgme -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libqgpgme -p /sbin/ldconfig
+%endif
 
 %files -n %libqgpgme
 %defattr(-,root,root)
@@ -359,8 +415,12 @@ Obsoletes: %{_lib}gpgme++4
 %description -n %libgpgmepp
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libgpgmepp -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libgpgmepp -p /sbin/ldconfig
+%endif
 
 %files -n %libgpgmepp
 %defattr(-,root,root)
@@ -380,8 +440,12 @@ Obsoletes: %{_lib}kpimidentities5 < 3.93.0-0.714098.1
 %description -n %libkpimidentities
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkpimidentities -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkpimidentities -p /sbin/ldconfig
+%endif
 
 %files -n %libkpimidentities
 %defattr(-,root,root)
@@ -399,8 +463,12 @@ Group: System/Libraries
 %description -n %libakonadi_kde
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libakonadi_kde -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libakonadi_kde -p /sbin/ldconfig
+%endif
 
 %files -n %libakonadi_kde
 %defattr(-,root,root)
@@ -418,8 +486,12 @@ Group: System/Libraries
 %description -n %libakonadi_kmime
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libakonadi_kmime -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libakonadi_kmime -p /sbin/ldconfig
+%endif
 
 %files -n %libakonadi_kmime
 %defattr(-,root,root)
