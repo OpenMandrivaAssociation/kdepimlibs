@@ -44,7 +44,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %_kde_libdir/kde4/*
 %_kde_datadir/apps/*
 %_kde_datadir/kde4/*
-%_datadir/dbus-1/interfaces/*
+%_kde_datadir/dbus-1/interfaces/*
 %exclude %_kde_datadir/apps/cmake
 
 #------------------------------------------------	
