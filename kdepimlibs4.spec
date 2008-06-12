@@ -13,6 +13,7 @@ BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
 BuildRequires: akonadi-devel >= 0.80.0-3.808261.4
+BuildRequires: xft2-devel
 
 %description 
 This module includes libraries that are central to the development and
