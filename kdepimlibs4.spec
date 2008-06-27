@@ -15,6 +15,8 @@ BuildRequires: gpgme-devel
 BuildRequires: akonadi-devel >= 0.80.0-3.808261.4
 BuildRequires: xft2-devel
 BuildRequires: xpm-devel
+# To remove on next snapshot - already upstream
+Patch0: kdepimlibs-4.0.84-soname-gpgme.patch
 
 %description 
 This module includes libraries that are central to the development and
@@ -540,6 +542,7 @@ browsing.
 
 %prep
 %setup -q -n kdepimlibs-%version
+%patch0 -p1 
 
 %build
 %cmake_kde4 
