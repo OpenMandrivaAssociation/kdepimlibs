@@ -403,7 +403,7 @@ KDE 4 core library.
 
 #--------------------------------------------------------------------------------
 
-%define gpgmepp_major 1
+%define gpgmepp_major 2
 %define libgpgmepp %mklibname gpgme++ %{gpgmepp_major}
 
 %package -n %libgpgmepp
