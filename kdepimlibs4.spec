@@ -1,12 +1,13 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.1.0
-Release: %mkrel 3
+Release: %mkrel 4
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
+# Post 4.1 patches
 Patch100: kdepimlibs-post-4.1.0-rev837899.patch
 Patch101: kdepimlibs-post-4.1.0-rev838884.patch
 Patch102: kdepimlibs-post-4.1.0-rev839404.patch
@@ -14,6 +15,10 @@ Patch103: kdepimlibs-post-4.1.0-rev839801.patch
 Patch104: kdepimlibs-post-4.1.0-rev841029.patch
 Patch105: kdepimlibs-post-4.1.0-rev841539.patch
 Patch106: kdepimlibs-post-4.1.0-rev841636.patch
+Patch107: kdepimlibs-post-4.1.0-rev842671.patch
+Patch108: kdepimlibs-post-4.1.0-rev843335.patch
+Patch109: kdepimlibs-post-4.1.0-rev844834.patch
+Patch110: kdepimlibs-post-4.1.0-rev844837.patch
 BuildRequires: kde4-macros
 BuildRequires: kdelibs4-devel >= 4.0.83
 BuildRequires: openldap-devel
@@ -554,6 +559,10 @@ browsing.
 %patch104 -p0 -b .post410
 %patch105 -p0 -b .post410
 %patch106 -p0 -b .post410
+%patch107 -p0 -b .post410
+%patch108 -p0 -b .post410
+%patch109 -p0 -b .post410
+%patch110 -p0 -b .post410
 
 %build
 %cmake_kde4 
