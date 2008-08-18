@@ -1,25 +1,31 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.1.0
-Release: %mkrel 4
+Release: %mkrel 5
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 # Post 4.1 patches
-Patch100: kdepimlibs-post-4.1.0-rev837899.patch
-Patch101: kdepimlibs-post-4.1.0-rev838884.patch
-Patch102: kdepimlibs-post-4.1.0-rev839404.patch
-Patch103: kdepimlibs-post-4.1.0-rev839801.patch
-Patch104: kdepimlibs-post-4.1.0-rev841029.patch
-Patch105: kdepimlibs-post-4.1.0-rev841539.patch
-Patch106: kdepimlibs-post-4.1.0-rev841636.patch
-Patch107: kdepimlibs-post-4.1.0-rev842671.patch
-Patch108: kdepimlibs-post-4.1.0-rev843335.patch
-Patch109: kdepimlibs-post-4.1.0-rev844834.patch
-Patch110: kdepimlibs-post-4.1.0-rev844837.patch
-BuildRequires: kde4-macros
+Patch100:kdepimlibs-post-4.1.0-rev837899.patch
+Patch101:kdepimlibs-post-4.1.0-rev838884.patch
+Patch102:kdepimlibs-post-4.1.0-rev839404.patch
+Patch103:kdepimlibs-post-4.1.0-rev839801.patch
+Patch104:kdepimlibs-post-4.1.0-rev841029.patch
+Patch105:kdepimlibs-post-4.1.0-rev841539.patch
+Patch106:kdepimlibs-post-4.1.0-rev841636.patch
+Patch107:kdepimlibs-post-4.1.0-rev842671.patch
+Patch108:kdepimlibs-post-4.1.0-rev843335.patch
+Patch109:kdepimlibs-post-4.1.0-rev844834.patch
+Patch110:kdepimlibs-post-4.1.0-rev844837.patch
+Patch111:kdepimlibs-post-4.1.0-rev845949.patch
+Patch112:kdepimlibs-post-4.1.0-rev846411.patch
+Patch113:kdepimlibs-post-4.1.0-rev847080.patch
+Patch114:kdepimlibs-post-4.1.0-rev847082.patch
+Patch115:kdepimlibs-post-4.1.0-rev847482.patch
+Patch116:kdepimlibs-post-4.1.0-rev848343.patch
+Patch117:kdepimlibs-post-4.1.0-rev848345.patch
 BuildRequires: kdelibs4-devel >= 4.0.83
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -552,17 +558,24 @@ browsing.
 
 %prep
 %setup -q -n kdepimlibs-%version
-%patch100 -p0 -b .post410
-%patch101 -p0 -b .post410
-%patch102 -p0 -b .post410
-%patch103 -p0 -b .post410
-%patch104 -p0 -b .post410
-%patch105 -p0 -b .post410
-%patch106 -p0 -b .post410
-%patch107 -p0 -b .post410
-%patch108 -p0 -b .post410
-%patch109 -p0 -b .post410
-%patch110 -p0 -b .post410
+%patch100 -p0 -b .post410 
+%patch101 -p0 -b .post410 
+%patch102 -p0 -b .post410 
+%patch103 -p0 -b .post410 
+%patch104 -p0 -b .post410 
+%patch105 -p0 -b .post410 
+%patch106 -p0 -b .post410 
+%patch107 -p0 -b .post410 
+%patch108 -p0 -b .post410 
+%patch109 -p0 -b .post410 
+%patch110 -p0 -b .post410 
+%patch111 -p0 -b .post410 
+%patch112 -p0 -b .post410 
+%patch113 -p0 -b .post410 
+%patch114 -p0 -b .post410 
+%patch115 -p0 -b .post410 
+%patch116 -p0 -b .post410 
+%patch117 -p0 -b .post410 
 
 %build
 %cmake_kde4 
@@ -579,5 +592,6 @@ rm -f %buildroot/%{_kde_libdir}/Gpgmepp/GpgmeppLibraryDepends.cmake
 
 %clean
 rm -fr %buildroot
+
 
 
