@@ -2,6 +2,7 @@ Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.1.70
 Release: %mkrel 1
+Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -530,23 +531,23 @@ Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
 Requires: kdelibs4-devel
 Provides: libkdepimlibs4-devel
-Requires: %libkabc = %version
-Requires: %libkblog = %version
-Requires: %libkabc_file_core = %version
-Requires: %libkcal = %version
-Requires: %libkimap = %version
-Requires: %libkldap = %version
-Requires: %libkmime = %version
-Requires: %libkpimutils = %version
-Requires: %libkresources = %version
-Requires: %libktnef = %version
-Requires: %libkxmlrpcclient = %version
-Requires: %libmailtransport = %version
-Requires: %libsyndication = %version
-Requires: %libqgpgme = %version
-Requires: %libgpgmepp = %version
-Requires: %libkpimidentities = %version
-Requires: %libakonadi_kmime = %version
+Requires: %libkabc = %epoch:%version
+Requires: %libkblog = %epoch:%version
+Requires: %libkabc_file_core = %epoch:%version
+Requires: %libkcal = %epoch:%version
+Requires: %libkimap = %epoch:%version
+Requires: %libkldap = %epoch:%version
+Requires: %libkmime = %epoch:%version
+Requires: %libkpimutils = %epoch:%version
+Requires: %libkresources = %epoch:%version
+Requires: %libktnef = %epoch:%version
+Requires: %libkxmlrpcclient = %epoch:%version
+Requires: %libmailtransport = %epoch:%version
+Requires: %libsyndication = %epoch:%version
+Requires: %libqgpgme = %epoch:%version
+Requires: %libgpgmepp = %epoch:%version
+Requires: %libkpimidentities = %epoch:%version
+Requires: %libakonadi_kmime = %epoch:%version
 %description devel
 This package includes the header files you will need to compile applications 
 for KDE. Also included is the KDE API documentation in HTML format for easy 
