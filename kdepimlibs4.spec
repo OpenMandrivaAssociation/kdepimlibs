@@ -7,7 +7,7 @@ License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
-BuildRequires: kdelibs4-devel >= 4.0.83
+BuildRequires: kdelibs4-devel >= 4.1.70
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
