@@ -1,14 +1,12 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.1.2
-Release: %mkrel 3
+Version: 4.1.70
+Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
-Patch1:        kdepimlibs-post-4.1.2-rev865199.patch
-Patch2:        kdepimlibs-post-4.1.2-rev865203.patch
 BuildRequires: kdelibs4-devel >= 4.0.83
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -48,6 +46,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %_kde_datadir/apps/*
 %_kde_datadir/kde4/*
 %_kde_datadir/dbus-1/interfaces/*
+%_kde_docdir/HTML/en/kcontrol/kresources
 %exclude %_kde_datadir/apps/cmake
 
 #------------------------------------------------	
@@ -477,6 +476,30 @@ KDE 4 core library.
 %defattr(-,root,root)
 %_kde_libdir/libakonadi-kde.so.%{akonadi_kde_major}*
 
+
+#------------------------------------------------
+
+%define akonadi_kabc_major 4
+%define libakonadi_kabc %mklibname akonadi-kabc %{akonadi_kabc_major}
+
+%package -n %libakonadi_kabc
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libakonadi_kabc
+KDE 4 core library.
+
+%if %mdkversion < 200900
+%post -n %libakonadi_kabc -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
+%postun -n %libakonadi_kabc -p /sbin/ldconfig
+%endif
+
+%files -n %libakonadi_kabc
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-kabc.so.%{akonadi_kabc_major}*
+
 #------------------------------------------------	
 
 %define akonadi_kmime_major 4
@@ -541,8 +564,7 @@ browsing.
 
 %prep
 %setup -q -n kdepimlibs-%version
-%patch1 -p0 -b .post412
-%patch2 -p0 -b .post412
+
 %build
 %cmake_kde4 
 
