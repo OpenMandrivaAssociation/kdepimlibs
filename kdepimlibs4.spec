@@ -1,7 +1,7 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.1.70
-Release: %mkrel 2
+Version: 4.1.71
+Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -531,6 +531,7 @@ Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
 Requires: kdelibs4-devel
 Provides: libkdepimlibs4-devel
+Requires: %name-core = %epoch:%version
 Requires: %libkabc = %epoch:%version
 Requires: %libkblog = %epoch:%version
 Requires: %libkabc_file_core = %epoch:%version
