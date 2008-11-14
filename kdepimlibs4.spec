@@ -1,7 +1,7 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.1.73
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -551,6 +551,7 @@ Requires: %libgpgmepp = %epoch:%version
 Requires: %libkpimidentities = %epoch:%version
 Requires: %libakonadi_kmime = %epoch:%version
 Requires: %libakonadi_kabc = %epoch:%version
+Requires: %libakonadi_kde = %epoch:%version
 
 %description devel
 This package includes the header files you will need to compile applications 
