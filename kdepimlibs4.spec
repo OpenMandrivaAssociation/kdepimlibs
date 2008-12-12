@@ -570,6 +570,7 @@ browsing.
 %_kde_datadir/apps/cmake/*/*
 %_kde_libdir/gpgmepp/*.cmake
 %_kde_datadir/config.kcfg/*
+%_kde_libdir/KdepimLibs/cmake
 
 #--------------------------------------------------------------------------------
 
