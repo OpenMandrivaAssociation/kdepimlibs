@@ -1,7 +1,7 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.2.2
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -9,6 +9,7 @@ BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 Patch100: kdepimlibs-4.2.3-rev948730.patch
+Patch101: kdepimlibs-4.2.3-rev950520.patch
 BuildRequires: kdelibs4-devel >= 2:4.1.73
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -445,6 +446,8 @@ browsing.
 %prep
 %setup -q -n kdepimlibs-%version
 %patch100 -p0
+%patch101 -p0
+
 %build
 %cmake_kde4 
 
