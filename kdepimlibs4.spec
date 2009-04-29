@@ -1,15 +1,15 @@
+%define svnrevision svn954171
+
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.2.2
-Release: %mkrel 3
+Version: 4.2.70
+Release: %mkrel 0.%svnrevision.1
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
-Patch100: kdepimlibs-4.2.3-rev948730.patch
-Patch101: kdepimlibs-4.2.3-rev950520.patch
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.%svnrevision.tar.bz2
 BuildRequires: kdelibs4-devel >= 2:4.1.73
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -399,7 +399,56 @@ KDE 4 core library.
 %defattr(-,root,root)
 %_kde_libdir/libakonadi-kmime.so.%{akonadi_kmime_major}*
 
+#------------------------------------------------
+
+%define kholidays_major 4
+%define libkholidays %mklibname kholidays %{kholidays_major}
+
+%package -n %libkholidays
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkholidays
+KDE 4 core library.
+
+%files -n %libkholidays
+%defattr(-,root,root)
+%_kde_libdir/libkholidays.so.%{kholidays_major}*
+
 #------------------------------------------------	
+
+%define kpimtextedit_major 4
+%define libkpimtextedit %mklibname kpimtextedit %{kpimtextedit_major}
+
+%package -n %libkpimtextedit
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkpimtextedit
+KDE 4 core library.
+
+%files -n %libkpimtextedit
+%defattr(-,root,root)
+%_kde_libdir/libkpimtextedit.so.%{kpimtextedit_major}*
+
+#------------------------------------------------
+
+%define microblog_major 4
+%define libmicroblog %mklibname microblog %{microblog_major}
+
+%package -n %libmicroblog
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libmicroblog
+KDE 4 core library.
+
+%files -n %libmicroblog
+%defattr(-,root,root)
+%_kde_libdir/libmicroblog.so.%{microblog_major}*
+
+#------------------------------------------------
+
 
 %package devel
 Group: Development/KDE and Qt
@@ -426,6 +475,9 @@ Requires: %libkpimidentities = %epoch:%version
 Requires: %libakonadi_kmime = %epoch:%version
 Requires: %libakonadi_kabc = %epoch:%version
 Requires: %libakonadi_kde = %epoch:%version
+Requires: %libkholidays = %epoch:%version
+Requires: %libkpimtextedit = %epoch:%version
+Requires: %libmicroblog = %epoch:%version
 
 %description devel
 This package includes the header files you will need to compile applications 
@@ -444,9 +496,7 @@ browsing.
 #--------------------------------------------------------------------------------
 
 %prep
-%setup -q -n kdepimlibs-%version
-%patch100 -p0
-%patch101 -p0
+%setup -q -n kdepimlibs-%version.%svnrevision
 
 %build
 %cmake_kde4 
