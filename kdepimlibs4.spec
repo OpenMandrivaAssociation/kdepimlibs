@@ -1,8 +1,8 @@
-%define svnrevision svn954171
+%define svnrevision svn961800
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.2.70
+Version: 4.2.71
 Release: %mkrel 0.%svnrevision.1
 Epoch:   2
 Group: Graphical desktop/KDE
