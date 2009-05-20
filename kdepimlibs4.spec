@@ -1,5 +1,9 @@
-%define svnrevision svn961800
+%define branch 1
+%{?_branch: %{expand: %%global branch 1}}
 
+%if %branch
+%define svnrevision svn961800
+%endif
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.2.85
@@ -9,7 +13,11 @@ Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 URL: http://www.kde.org
+%if %branch
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%svnrevision.tar.bz2
+%else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
+%endif
 BuildRequires: kdelibs4-devel >= 2:4.2.85
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -496,7 +504,11 @@ browsing.
 #--------------------------------------------------------------------------------
 
 %prep
+%if %branch
+%setup -q -n kdepimlibs-%version%svnrevision
+%else
 %setup -q -n kdepimlibs-%version
+%endif
 
 %build
 %cmake_kde4 
