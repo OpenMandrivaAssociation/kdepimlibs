@@ -2,11 +2,11 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define svnrevision svn961800
+%define svnrevision svn969966
 %endif
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.2.85
+Version: 4.2.87
 Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
@@ -18,7 +18,7 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%svnrev
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
-BuildRequires: kdelibs4-devel >= 2:4.2.85
+BuildRequires: kdelibs4-devel >= 2:4.2.87
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
