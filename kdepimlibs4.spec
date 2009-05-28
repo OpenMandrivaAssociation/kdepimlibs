@@ -2,11 +2,11 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define svnrevision svn969966
+%define svnrevision svn973768
 %endif
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.2.87
+Version: 4.2.88
 Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
