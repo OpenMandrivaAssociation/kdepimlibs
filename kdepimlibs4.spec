@@ -23,7 +23,7 @@ BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
-BuildRequires: akonadi-devel >= 0.80.0-3.808261.4
+BuildRequires: akonadi-devel >= 1.1.95
 BuildRequires: xft2-devel
 BuildRequires: xpm-devel
 BuildRequires: libical-devel >= 0.41
@@ -59,6 +59,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %_kde_datadir/apps/*
 %_kde_datadir/kde4/*
 %_kde_datadir/dbus-1/interfaces/*
+%_kde_datadir/mime/packages/kdepimlibs-mime.xml
 %_kde_docdir/HTML/en/kcontrol/kresources
 %_kde_docdir/HTML/en/kioslave/imap
 %_kde_docdir/HTML/en/kioslave/ldap
