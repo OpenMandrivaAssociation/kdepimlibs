@@ -1,25 +1,14 @@
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
-
-%if %branch
-%define svnrevision svn973768
-%endif
-
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.2.96
+Version: 4.2.98
 Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
-URL: http://www.kde.org
-%if %branch
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%svnrevision.tar.bz2
-%else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
-%endif
-BuildRequires: kdelibs4-devel >= 2:%version
+BuildRequires: kdelibs4-devel >= 2:4.2.98
+BuildRequires: kdelibs4-experimental-devel >= 4.2.98
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
@@ -463,7 +452,8 @@ KDE 4 core library.
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
-Requires: kdelibs4-devel
+Requires: kdelibs4-devel >= 2:4.2.98
+Requires: kdelibs4-experimental-devel >= 4.2.98
 Provides: libkdepimlibs4-devel
 Requires: %name-core = %epoch:%version
 Requires: %libkabc = %epoch:%version
@@ -506,11 +496,7 @@ browsing.
 #--------------------------------------------------------------------------------
 
 %prep
-%if %branch
-%setup -q -n kdepimlibs-%version%svnrevision
-%else
 %setup -q -n kdepimlibs-%version
-%endif
 
 %build
 %cmake_kde4 
@@ -519,11 +505,8 @@ browsing.
 
 %install
 rm -fr %buildroot
-cd build
 
-make DESTDIR=%buildroot install
-rm -f %buildroot/%{_kde_libdir}/Gpgmepp/GpgmeppConfig.cmake
-rm -f %buildroot/%{_kde_libdir}/Gpgmepp/GpgmeppLibraryDepends.cmake
+%makeinstall_std -C build
 
 %clean
 rm -fr %buildroot
