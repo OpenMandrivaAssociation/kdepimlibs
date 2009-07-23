@@ -8,7 +8,7 @@ License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 BuildRequires: kdelibs4-devel >= 2:4.2.98
-BuildRequires: kdelibs4-experimental-devel >= 4.2.98
+BuildRequires: kdelibs4-experimental-devel >= 2:4.2.98
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
@@ -453,7 +453,7 @@ KDE 4 core library.
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
 Requires: kdelibs4-devel >= 2:4.2.98
-Requires: kdelibs4-experimental-devel >= 4.2.98
+Requires: kdelibs4-experimental-devel >= 2:4.2.98
 Provides: libkdepimlibs4-devel
 Requires: %name-core = %epoch:%version
 Requires: %libkabc = %epoch:%version
