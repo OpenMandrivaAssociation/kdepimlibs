@@ -9,12 +9,11 @@ Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_snapshot}.tar.bz2
-BuildRequires: kdelibs4-devel >= 2:4.2.98
-BuildRequires: kdelibs4-experimental-devel >= 2:4.2.98
+BuildRequires: kdelibs4-devel >= 2:4.3.71
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
-BuildRequires: akonadi-devel >= 1.2.61
+BuildRequires: akonadi-devel >= 1:1.2.61
 BuildRequires: xft2-devel
 BuildRequires: xpm-devel
 BuildRequires: libical-devel >= 0.41
@@ -53,6 +52,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %_kde_datadir/kde4/services/kresources
 %_kde_datadir/kde4/servicetypes/
 %_kde_datadir/kde4/services/kresources.desktop
+%_kde_datadir/kde4/services/akonadicontact_actions.desktop
 %_kde_datadir/apps/*
 %_kde_datadir/dbus-1/interfaces/*
 %_kde_datadir/mime/packages/kdepimlibs-mime.xml
@@ -549,6 +549,40 @@ KDE 4 core library.
 
 #------------------------------------------------
 
+%define akonadi_contact_major 4
+%define libakonadi_contact %mklibname akonadi-contact  %{microblog_major}
+
+%package -n %libakonadi_contact
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libakonadi_contact
+KDE 4 core library.
+
+%files -n %libakonadi_contact
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-contact.so.%{akonadi_contact_major}*
+
+#------------------------------------------------
+
+%define kontactinterface_major 4
+%define libkontactinterface %mklibname kontactinterface %{kontactinterface_major}
+
+%package -n %libkontactinterface
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libkontactinterface
+KDE 4 core library.
+
+%files -n %libkontactinterface
+%defattr(-,root,root)
+%_kde_libdir/libkontactinterface.so.%{kontactinterface_major}*
+
+#------------------------------------------------
+
 
 %package devel
 Group: Development/KDE and Qt
@@ -579,6 +613,8 @@ Requires: %libakonadi_kde = %epoch:%version
 Requires: %libkholidays = %epoch:%version
 Requires: %libkpimtextedit = %epoch:%version
 Requires: %libmicroblog = %epoch:%version
+Requires: %libakonadi_contact = %epoch:%version
+Requires: %libkontactinterface = %epoch:%version
 
 %description devel
 This package includes the header files you will need to compile applications 
