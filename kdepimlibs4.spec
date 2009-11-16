@@ -1,9 +1,9 @@
-%define kde_snapshot svn1040395
+%define kde_snapshot svn1048496
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.3.73
-Release: %mkrel 4
+Version: 4.3.75
+Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -57,6 +57,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %_kde_datadir/dbus-1/interfaces/*
 %_kde_datadir/mime/packages/kdepimlibs-mime.xml
 %_kde_docdir/HTML/en/kcontrol/kresources
+%dir %_kde_docdir/HTML/en/kioslave
 %exclude %_kde_datadir/apps/cmake
 %exclude %_kde_libdir/kde4/kabc_ldapkio.so
 %exclude %_kde_datadir/kde4/services/kresources/kabc/ldapkio.desktop
@@ -125,6 +126,7 @@ KDE 4 sieve module.
 %defattr(-,root,root)
 %_kde_libdir/kde4/kio_sieve.so
 %_kde_datadir/kde4/services/sieve*
+%doc %_kde_docdir/HTML/en/kioslave/sieve
 
 #------------------------------------------------	
 
@@ -140,6 +142,7 @@ KDE 4 mbox module.
 %defattr(-,root,root)
 %_kde_libdir/kde4/kio_mbox.so
 %_kde_datadir/kde4/services/mbox*
+%doc %_kde_docdir/HTML/en/kioslave/mbox
 
 #------------------------------------------------	
 
