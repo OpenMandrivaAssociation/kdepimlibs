@@ -18,7 +18,7 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_s
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
-BuildRequires: kdelibs4-devel >= 2:4.3.71
+BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
