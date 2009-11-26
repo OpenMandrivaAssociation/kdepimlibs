@@ -1,14 +1,23 @@
-%define kde_snapshot svn1048496
+%define branch 1
+%{?_branch: %{expand: %%global branch 1}}
+
+%if %branch
+%define kde_snapshot svn1053190
+%endif
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.3.75
+Version: 4.3.77
 Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
+%if %branch
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_snapshot}.tar.bz2
+%else
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
+%endif
 BuildRequires: kdelibs4-devel >= 2:4.3.71
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -635,7 +644,11 @@ browsing.
 #--------------------------------------------------------------------------------
 
 %prep
+%if %branch
 %setup -q -n kdepimlibs-%version%{kde_snapshot}
+%else
+%setup -q -n kdepimlibs-%version
+%endif
 
 %build
 %cmake_kde4 
