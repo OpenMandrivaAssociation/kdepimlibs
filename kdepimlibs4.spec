@@ -643,6 +643,7 @@ Requires: %libmicroblog = %epoch:%version
 Requires: %libakonadi_contact = %epoch:%version
 Requires: %libkontactinterface = %epoch:%version
 Requires: %libakonadi_kcal = %epoch:%version
+Conflicts: kdepim4-devel < 2:4.3.90
 
 %description devel
 This package includes the header files you will need to compile applications 
