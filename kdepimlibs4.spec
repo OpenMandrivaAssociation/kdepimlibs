@@ -562,7 +562,7 @@ KDE 4 core library.
 #------------------------------------------------
 
 %define akonadi_contact_major 4
-%define libakonadi_contact %mklibname akonadi-contact  %{microblog_major}
+%define libakonadi_contact %mklibname akonadi-contact %{akonadi_contact_major}
 
 %package -n %libakonadi_contact
 Summary: KDE 4 core library
@@ -575,6 +575,23 @@ KDE 4 core library.
 %files -n %libakonadi_contact
 %defattr(-,root,root)
 %_kde_libdir/libakonadi-contact.so.%{akonadi_contact_major}*
+
+#------------------------------------------------
+
+%define akonadi_kcal_major 4
+%define libakonadi_kcal %mklibname akonadi-kcal  %{akonadi_kcal_major}
+
+%package -n %libakonadi_kcal
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libakonadi_kcal
+KDE 4 core library.
+
+%files -n %libakonadi_kcal
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-kcal.so.%{akonadi_kcal_major}*
 
 #------------------------------------------------
 
@@ -594,7 +611,6 @@ KDE 4 core library.
 %_kde_libdir/libkontactinterface.so.%{kontactinterface_major}*
 
 #------------------------------------------------
-
 
 %package devel
 Group: Development/KDE and Qt
@@ -626,6 +642,7 @@ Requires: %libkpimtextedit = %epoch:%version
 Requires: %libmicroblog = %epoch:%version
 Requires: %libakonadi_contact = %epoch:%version
 Requires: %libkontactinterface = %epoch:%version
+Requires: %libakonadi_kcal = %epoch:%version
 
 %description devel
 This package includes the header files you will need to compile applications 
