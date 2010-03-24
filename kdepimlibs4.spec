@@ -5,12 +5,10 @@
 %define kde_snapshot svn1053190
 %endif
 
-%define subrel 1
-
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.4.1
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
