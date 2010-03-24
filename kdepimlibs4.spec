@@ -5,10 +5,12 @@
 %define kde_snapshot svn1053190
 %endif
 
+%define subrel 1
+
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.4.1
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -18,6 +20,14 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_s
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
+Patch200:      kdepimlibs-4.4.1-t1088138-silent-akonadi.patch
+Patch201:      kdepimlibs-4.4.1-t1088147-silent-akonadi.patch
+Patch202:      kdepimlibs-4.4.1-t1088151-add-missing-file.patch
+Patch203:      kdepimlibs-4.4.1-t1088243-start-akonadi-automatically.patch
+Patch204:      kdepimlibs-4.4.1-t1088248-reload-agent-list.patch
+Patch205:      kdepimlibs-4.4.1-t1088257-fix-selftest.patch
+Patch206:      kdepimlibs-4.4.1-t1088293-silent-akonadi.patch
+Patch207:      kdepimlibs-4.4.1-t1088321-fix-signal.patch
 BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -667,6 +677,14 @@ browsing.
 %else
 %setup -q -n kdepimlibs-%version
 %endif
+%patch200 -p1
+%patch201 -p1
+%patch202 -p1
+%patch203 -p1
+%patch204 -p1
+%patch205 -p1
+%patch206 -p1
+%patch207 -p1
 
 %build
 %cmake_kde4 
