@@ -8,7 +8,7 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.4.2
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -26,6 +26,10 @@ Patch204:      kdepimlibs-4.4.1-t1088248-reload-agent-list.patch
 Patch205:      kdepimlibs-4.4.1-t1088257-fix-selftest.patch
 Patch206:      kdepimlibs-4.4.1-t1088293-silent-akonadi.patch
 Patch207:      kdepimlibs-4.4.1-t1088321-fix-signal.patch
+Patch208:      kdepimlibs-4.4.1-t1108274-change-KJob-execution.patch
+Patch209:      kdepimlibs-4.4.1-t1108279-change-akonadi-server.patch
+Patch210:      kdepimlibs-4.4.1-t1108288-fix-connect.patch
+Patch211:      kdepimlibs-4.4.1-t1108308-fix-transaction.patch
 BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -683,7 +687,10 @@ browsing.
 %patch205 -p1
 %patch206 -p1
 %patch207 -p1
-
+%patch208 -p0
+%patch209 -p0
+%patch210 -p0
+%patch211 -p0
 %build
 %cmake_kde4 
 
