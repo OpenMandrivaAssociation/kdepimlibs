@@ -8,7 +8,7 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.4.2
-Release: %mkrel 4
+Release: %mkrel 5
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -30,6 +30,7 @@ Patch208:      kdepimlibs-4.4.1-t1108274-change-KJob-execution.patch
 Patch209:      kdepimlibs-4.4.1-t1108279-change-akonadi-server.patch
 Patch210:      kdepimlibs-4.4.1-t1108288-fix-connect.patch
 Patch211:      kdepimlibs-4.4.1-t1108308-fix-transaction.patch
+Patch212:      kdepimlibs-4.4.2-t1101153-add-anew-version-of-custom-fields-for-contacts.patch
 BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -691,6 +692,7 @@ browsing.
 %patch209 -p0
 %patch210 -p0
 %patch211 -p0
+%patch212 -p0
 %build
 %cmake_kde4 
 
