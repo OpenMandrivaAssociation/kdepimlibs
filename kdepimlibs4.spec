@@ -18,6 +18,8 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_s
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
+Patch100:      kdepimlibs-4.4.3-b1122692-fix-timesInInterval.patch
+Patch101:      kdepimlibs-4.4.3-b1122722-revert-parts-of-commit-1122720.patch
 Patch200:      kdepimlibs-4.4.1-t1088138-silent-akonadi.patch
 Patch201:      kdepimlibs-4.4.1-t1088147-silent-akonadi.patch
 Patch202:      kdepimlibs-4.4.1-t1088151-add-missing-file.patch
@@ -32,7 +34,6 @@ Patch210:      kdepimlibs-4.4.1-t1108288-fix-connect.patch
 Patch211:      kdepimlibs-4.4.1-t1108308-fix-transaction.patch
 Patch212:      kdepimlibs-4.4.2-t1101153-add-anew-version-of-custom-fields-for-contacts.patch
 Patch300:      kdepimlibs-4.4.2-fix-akonadi-crash.patch
-Patch301:      kdepimlibs-4.4.2-review-3827-distributionlist.patch
 BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -682,6 +683,8 @@ browsing.
 %else
 %setup -q -n kdepimlibs-%version
 %endif
+%patch100 -p1
+%patch101 -p1
 %patch200 -p1
 %patch201 -p1
 %patch202 -p1
@@ -696,7 +699,6 @@ browsing.
 %patch211 -p0
 %patch212 -p0
 %patch300 -p0
-%patch301 -p1
 %build
 %cmake_kde4 
 
