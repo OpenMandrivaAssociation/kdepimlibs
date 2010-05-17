@@ -8,7 +8,7 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.4.3
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -18,8 +18,11 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_s
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
+
 Patch100:      kdepimlibs-4.4.3-b1122692-fix-timesInInterval.patch
 Patch101:      kdepimlibs-4.4.3-b1122722-revert-parts-of-commit-1122720.patch
+Patch102:      kdepimlibs-4.4.3-b1125448-fix-dots-in-end-of-URL.patch
+
 Patch200:      kdepimlibs-4.4.1-t1088138-silent-akonadi.patch
 Patch201:      kdepimlibs-4.4.1-t1088147-silent-akonadi.patch
 Patch202:      kdepimlibs-4.4.1-t1088151-add-missing-file.patch
@@ -685,6 +688,7 @@ browsing.
 %endif
 %patch100 -p1
 %patch101 -p1
+%patch102 -p1
 %patch200 -p1
 %patch201 -p1
 %patch202 -p1
