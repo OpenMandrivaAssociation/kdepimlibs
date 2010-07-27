@@ -2,13 +2,13 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1053190
+%define kde_snapshot svn1138650
 %endif
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.4.3
-Release: %mkrel 3
+Version: 4.4.92
+Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -19,24 +19,6 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_s
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
 
-Patch100:      kdepimlibs-4.4.3-b1122692-fix-timesInInterval.patch
-Patch101:      kdepimlibs-4.4.3-b1122722-revert-parts-of-commit-1122720.patch
-Patch102:      kdepimlibs-4.4.3-b1125448-fix-dots-in-end-of-URL.patch
-
-Patch200:      kdepimlibs-4.4.1-t1088138-silent-akonadi.patch
-Patch201:      kdepimlibs-4.4.1-t1088147-silent-akonadi.patch
-Patch202:      kdepimlibs-4.4.1-t1088151-add-missing-file.patch
-Patch203:      kdepimlibs-4.4.1-t1088243-start-akonadi-automatically.patch
-Patch204:      kdepimlibs-4.4.1-t1088248-reload-agent-list.patch
-Patch205:      kdepimlibs-4.4.1-t1088257-fix-selftest.patch
-Patch206:      kdepimlibs-4.4.1-t1088293-silent-akonadi.patch
-Patch207:      kdepimlibs-4.4.1-t1088321-fix-signal.patch
-Patch208:      kdepimlibs-4.4.1-t1108274-change-KJob-execution.patch
-Patch209:      kdepimlibs-4.4.1-t1108279-change-akonadi-server.patch
-Patch210:      kdepimlibs-4.4.1-t1108288-fix-connect.patch
-Patch211:      kdepimlibs-4.4.1-t1108308-fix-transaction.patch
-Patch212:      kdepimlibs-4.4.2-t1101153-add-anew-version-of-custom-fields-for-contacts.patch
-Patch300:      kdepimlibs-4.4.2-fix-akonadi-crash.patch
 BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -85,6 +67,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %_kde_datadir/dbus-1/interfaces/*
 %_kde_datadir/mime/packages/kdepimlibs-mime.xml
 %_kde_docdir/HTML/en/kcontrol/kresources
+%_kde_datadir/kde4/services/akonadi/contact/
 %dir %_kde_docdir/HTML/en/kioslave
 %exclude %_kde_datadir/apps/cmake
 %exclude %_kde_libdir/kde4/kabc_ldapkio.so
@@ -686,23 +669,6 @@ browsing.
 %else
 %setup -q -n kdepimlibs-%version
 %endif
-%patch100 -p1
-%patch101 -p1
-%patch102 -p1
-%patch200 -p1
-%patch201 -p1
-%patch202 -p1
-%patch203 -p1
-%patch204 -p1
-%patch205 -p1
-%patch206 -p1
-%patch207 -p1
-%patch208 -p0
-%patch209 -p0
-%patch210 -p0
-%patch211 -p0
-%patch212 -p0
-%patch300 -p0
 %build
 %cmake_kde4 
 
