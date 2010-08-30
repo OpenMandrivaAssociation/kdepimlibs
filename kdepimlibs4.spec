@@ -613,6 +613,57 @@ KDE 4 core library.
 
 #------------------------------------------------
 
+%define akonadi_calendar_major 4
+%define libakonadi_calendar %mklibname akonadi-calendar %{akonadi_calendar_major}
+
+%package -n %libakonadi_calendar
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libakonadi_calendar
+KDE 4 core library.
+
+%files -n %libakonadi_calendar
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-calendar.so.%{akonadi_calendar_major}*
+
+#------------------------------------------------
+
+%define kcalcore_major 4
+%define libkcalcore %mklibname kcalcore %{kcalcore_major}
+
+%package -n %libkcalcore
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libkcalcore
+KDE 4 core library.
+
+%files -n %libkcalcore
+%defattr(-,root,root)
+%_kde_libdir/libkcalcore.so.%{kcalcore_major}*
+
+#------------------------------------------------
+
+%define kcalutils_major 4
+%define libkcalutils %mklibname kcalutils %{kcalutils_major}
+
+%package -n %libkcalutils
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libkcalutils
+KDE 4 core library.
+
+%files -n %libkcalutils
+%defattr(-,root,root)
+%_kde_libdir/libkcalutils.so.%{kcalutils_major}*
+
+#------------------------------------------------
+
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
@@ -644,6 +695,9 @@ Requires: %libmicroblog = %epoch:%version
 Requires: %libakonadi_contact = %epoch:%version
 Requires: %libkontactinterface = %epoch:%version
 Requires: %libakonadi_kcal = %epoch:%version
+Requires: %libkcalcore = %epoch:%version
+Requires: %libakonadi_calendar = %epoch:%version
+Requires: %libkcalutils = %epoch:%version
 Conflicts: kdepim4-devel < 2:4.3.90
 
 %description devel
