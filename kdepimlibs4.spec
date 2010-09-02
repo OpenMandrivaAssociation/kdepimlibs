@@ -2,12 +2,12 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1165394
+%define kde_snapshot svn1170578
 %endif
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.5.65
+Version: 4.5.67
 Release: %mkrel 1
 Epoch:   2
 Group: Graphical desktop/KDE
