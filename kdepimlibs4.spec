@@ -2,14 +2,14 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1170578
+%define kde_snapshot svn1174542
 %endif
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.5.67
+Version: 4.5.68
 Release: %mkrel 1
-Epoch:   2
+Epoch: 2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -40,14 +40,15 @@ scheduling and even sticky notes.
 
 #--------------------------------------------------------------------------------
 
-%package   core
-Group:     Development/KDE and Qt
-Summary:   Config file and icons file for %name
+%package core
+Group: Development/KDE and Qt
+Summary: Config file and icons file for %name
 Obsoletes: kdepimlibs4-common
 Obsoletes: kdepim4-ioslaves
 Obsoletes: %{mklibname kdepimlibs 4} < 2:4.3.1
 Conflicts: %{mklibname kholidays 4} < 2:4.3.1-1
 Conflicts: kontact < 2:4.3.73
+
 %description core
 This packages contains all icons, config file etc... of kdepimlibs4.
 
@@ -192,8 +193,8 @@ KDE 4 nntp module.
 %define libkabc %mklibname kabc %kabc_major
 
 %package -n %libkabc
-Summary:    KDE 4 core library
-Group:      System/Libraries
+Summary: KDE 4 core library
+Group:  System/Libraries
 Requires: %{name}-core = %epoch:%version
 
 %description -n %libkabc
@@ -580,7 +581,7 @@ KDE 4 core library.
 #------------------------------------------------
 
 %define akonadi_kcal_major 4
-%define libakonadi_kcal %mklibname akonadi-kcal  %{akonadi_kcal_major}
+%define libakonadi_kcal %mklibname akonadi-kcal %{akonadi_kcal_major}
 
 %package -n %libakonadi_kcal
 Summary: KDE 4 core library
@@ -722,18 +723,15 @@ browsing.
 %else
 %setup -q -n kdepimlibs-%version
 %endif
+
 %build
 %cmake_kde4 
-
 %make
 
 %install
 rm -fr %buildroot
-
 %makeinstall_std -C build
 
 %clean
 rm -fr %buildroot
-
-
 
