@@ -86,6 +86,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %_kde_services/kresources/kabc/net.desktop
 %_kde_services/kresources/kabc_manager.desktop
 %_kde_services/kresources/kcal
+%_kde_services/kresources/kcal_manager.desktop
 %_kde_servicetypes/*.desktop
 %_datadir/dbus-1/interfaces/*
 %_kde_datadir/mime/packages/kdepimlibs-mime.xml
