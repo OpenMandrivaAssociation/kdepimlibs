@@ -2,13 +2,17 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1174542
+%define kde_snapshot svn1183358
 %endif
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.5.68
+Version: 4.5.71
+%if %branch
+Release: %mkrel -c %kde_snapshot 1
+%else
 Release: %mkrel 1
+%endif
 Epoch: 2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -18,7 +22,7 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_s
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
-BuildRequires: kdelibs4-devel >= 2:%version
+BuildRequires: kdelibs4-devel >= 2:4.5.0
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
@@ -48,30 +52,45 @@ Obsoletes: kdepim4-ioslaves
 Obsoletes: %{mklibname kdepimlibs 4} < 2:4.3.1
 Conflicts: %{mklibname kholidays 4} < 2:4.3.1-1
 Conflicts: kontact < 2:4.3.73
+Conflicts: %{name}-devel < 2.4.5.71
 
 %description core
 This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
 %defattr(-,root,root,-)
-%_kde_libdir/kde4/kabc_*
-%_kde_libdir/kde4/kabcformat*
-%_kde_libdir/kde4/kcal*
-%_kde_libdir/kde4/kcm*
-%_kde_datadir/kde4/services/kcm*
-%_kde_datadir/kde4/services/kresources
-%_kde_datadir/kde4/servicetypes/
-%_kde_datadir/kde4/services/kresources.desktop
-%_kde_datadir/kde4/services/akonadicontact_actions.desktop
-%_kde_datadir/apps/*
-%_kde_datadir/dbus-1/interfaces/*
+%_kde_libdir/kde4/kabc_directory.so
+%_kde_libdir/kde4/kabc_file.so
+%_kde_libdir/kde4/kabc_net.so
+%_kde_libdir/kde4/kabcformat_binary.so
+%_kde_libdir/kde4/kcal_local.so
+%_kde_libdir/kde4/kcal_localdir.so
+%_kde_libdir/kde4/kcm_akonadicontact_actions.so
+%_kde_libdir/kde4/kcm_kresources.so
+%_kde_libdir/kde4/kcm_mailtransport.so
+%_kde_datadir/config.kcfg/*
+%_kde_appsdir/akonadi
+%_kde_appsdir/akonadi-kde
+%_kde_appsdir/kabc
+%_kde_appsdir/kconf_update/mailtransports.upd
+%_kde_appsdir/kconf_update/migrate-transports.pl
+%_kde_appsdir/libkholidays
+%_kde_services/akonadi/contact
+%_kde_services/akonadicontact_actions.desktop
+%_kde_services/kcm_mailtransport.desktop
+%dir %_kde_services/kresources
+%_kde_services/kresources.desktop
+%dir %_kde_services/kresources/kabc
+%_kde_services/kresources/kabc/dir.desktop
+%_kde_services/kresources/kabc/file.desktop
+%_kde_services/kresources/kabc/net.desktop
+%_kde_services/kresources/kabc_manager.desktop
+%_kde_services/kresources/kcal
+%_kde_servicetypes/*.desktop
+%_datadir/dbus-1/interfaces/*
 %_kde_datadir/mime/packages/kdepimlibs-mime.xml
 %_kde_docdir/HTML/en/kcontrol/kresources
-%_kde_datadir/kde4/services/akonadi/contact/
 %dir %_kde_docdir/HTML/en/kioslave
-%exclude %_kde_datadir/apps/cmake
-%exclude %_kde_libdir/kde4/kabc_ldapkio.so
-%exclude %_kde_datadir/kde4/services/kresources/kabc/ldapkio.desktop
 
 #------------------------------------------------	
 
@@ -288,6 +307,23 @@ KDE 4 core library.
 %files -n %libkldap
 %defattr(-,root,root)
 %_kde_libdir/libkldap.so.%{kldap_major}*
+
+#------------------------------------------------
+
+%define kmbox_major 4
+%define libkmbox %mklibname kmbox %{kmbox_major}
+
+%package -n %libkmbox
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libkmbox
+KDE 4 core library.
+
+%files -n %libkmbox
+%defattr(-,root,root)
+%_kde_libdir/libkmbox.so.%{kmbox_major}*
 
 #------------------------------------------------	
 
@@ -668,37 +704,37 @@ KDE 4 core library.
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
-Requires: kdelibs4-devel >= 2:4.2.98
-Provides: libkdepimlibs4-devel
+Requires: kdelibs4-devel >= 2:4.5.0
 Requires: %name-core = %epoch:%version
+Requires: %libakonadi_calendar = %epoch:%version
+Requires: %libakonadi_contact = %epoch:%version
+Requires: %libakonadi_kabc = %epoch:%version
+Requires: %libakonadi_kcal = %epoch:%version
+Requires: %libakonadi_kde = %epoch:%version
+Requires: %libakonadi_kmime = %epoch:%version
+Requires: %libgpgmepp = %epoch:%version
 Requires: %libkabc = %epoch:%version
-Requires: %libkblog = %epoch:%version
 Requires: %libkabc_file_core = %epoch:%version
+Requires: %libkblog = %epoch:%version
 Requires: %libkcal = %epoch:%version
+Requires: %libkcalcore = %epoch:%version
+Requires: %libkcalutils = %epoch:%version
+Requires: %libkholidays = %epoch:%version
 Requires: %libkimap = %epoch:%version
 Requires: %libkldap = %epoch:%version
+Requires: %libkmbox = %epoch:%version
 Requires: %libkmime = %epoch:%version
+Requires: %libkontactinterface = %epoch:%version
+Requires: %libkpimidentities = %epoch:%version
+Requires: %libkpimtextedit = %epoch:%version
 Requires: %libkpimutils = %epoch:%version
 Requires: %libkresources = %epoch:%version
 Requires: %libktnef = %epoch:%version
 Requires: %libkxmlrpcclient = %epoch:%version
 Requires: %libmailtransport = %epoch:%version
-Requires: %libsyndication = %epoch:%version
-Requires: %libqgpgme = %epoch:%version
-Requires: %libgpgmepp = %epoch:%version
-Requires: %libkpimidentities = %epoch:%version
-Requires: %libakonadi_kmime = %epoch:%version
-Requires: %libakonadi_kabc = %epoch:%version
-Requires: %libakonadi_kde = %epoch:%version
-Requires: %libkholidays = %epoch:%version
-Requires: %libkpimtextedit = %epoch:%version
 Requires: %libmicroblog = %epoch:%version
-Requires: %libakonadi_contact = %epoch:%version
-Requires: %libkontactinterface = %epoch:%version
-Requires: %libakonadi_kcal = %epoch:%version
-Requires: %libkcalcore = %epoch:%version
-Requires: %libakonadi_calendar = %epoch:%version
-Requires: %libkcalutils = %epoch:%version
+Requires: %libqgpgme = %epoch:%version
+Requires: %libsyndication = %epoch:%version
 Conflicts: kdepim4-devel < 2:4.3.90
 
 %description devel
@@ -708,12 +744,12 @@ browsing.
 
 %files devel
 %defattr(-,root,root,-)
-%_kde_prefix/include/*
+%_kde_includedir/*
 %_kde_libdir/*.so
 %_kde_datadir/apps/cmake/*/*
 %_kde_libdir/gpgmepp/*.cmake
-%_kde_datadir/config.kcfg/*
-%_kde_libdir/cmake/
+%_kde_libdir/kde4/plugins/designer/*.so
+%_kde_libdir/cmake/KdepimLibs
 
 #--------------------------------------------------------------------------------
 
