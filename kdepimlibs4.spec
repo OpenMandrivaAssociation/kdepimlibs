@@ -318,6 +318,7 @@ KDE 4 core library.
 Summary: KDE 4 core library
 Group: System/Libraries
 Requires: %{name}-core = %epoch:%version
+Obsoletes: %{_lib}mbox4 < 2:4.5.71
 
 %description -n %libkmbox
 KDE 4 core library.
