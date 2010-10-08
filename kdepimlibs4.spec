@@ -9,7 +9,7 @@ Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.5.71
 %if %branch
-Release: %mkrel -c %kde_snapshot 1
+Release: %mkrel -c %kde_snapshot 2
 %else
 Release: %mkrel 1
 %endif
@@ -22,6 +22,7 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_s
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
 %endif
+Patch101: kdepimlibs-4.5.71svn1183969.patch
 BuildRequires: kdelibs4-devel >= 2:4.5.0
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -761,6 +762,7 @@ browsing.
 %else
 %setup -q -n kdepimlibs-%version
 %endif
+%patch101 -p1 -b .svn1183969
 
 %build
 %cmake_kde4 
