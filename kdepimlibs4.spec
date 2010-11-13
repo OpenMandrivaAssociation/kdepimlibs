@@ -2,7 +2,7 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1196349
+%define kde_snapshot svn1196498
 %endif
 
 Name: kdepimlibs4
