@@ -9,7 +9,7 @@ Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
 Version: 4.5.77
 %if %branch
-Release: %mkrel -c %kde_snapshot 1
+Release: %mkrel -c %kde_snapshot 2
 %else
 Release: %mkrel 1
 %endif
@@ -26,7 +26,7 @@ BuildRequires: kdelibs4-devel >= 2:4.5.0
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
-BuildRequires: akonadi-devel >= 1:1.2.61
+BuildRequires: akonadi-devel >= 1:1.4.54
 BuildRequires: xft2-devel
 BuildRequires: xpm-devel
 BuildRequires: libical-devel >= 0.41
