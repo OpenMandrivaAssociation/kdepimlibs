@@ -7,7 +7,7 @@
 
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.5.80
+Version: 4.5.85
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
