@@ -737,6 +737,7 @@ Requires: %libmailtransport = %epoch:%version
 Requires: %libmicroblog = %epoch:%version
 Requires: %libqgpgme = %epoch:%version
 Requires: %libsyndication = %epoch:%version
+Requires: boost-devel
 Conflicts: kdepim4-devel < 2:4.3.90
 
 %description devel
