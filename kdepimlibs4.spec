@@ -1,27 +1,12 @@
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
-
-%if %branch
-%define kde_snapshot svn1198704
-%endif
-
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.6.95
-%if %branch
-Release: 0.%kde_snapshot.1
-%else
+Version: 4.7.40
 Release: 1
-%endif
 Epoch: 2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
-%if %branch
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version%{kde_snapshot}.tar.bz2
-%else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
-%endif
 BuildRequires: kdelibs4-devel >= 2:4.5.0
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
@@ -104,7 +89,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 imap module.
 
 %files -n kio4-imap
-%defattr(-,root,root)
+
 %_kde_docdir/HTML/en/kioslave/imap
 %_kde_libdir/kde4/kio_imap4.so
 %_kde_datadir/kde4/services/imap*
@@ -120,7 +105,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 pop3 module.
 
 %files -n kio4-pop3
-%defattr(-,root,root)
+
 %_kde_docdir/HTML/en/kioslave/pop3
 %_kde_libdir/kde4/kio_pop3.so
 %_kde_datadir/kde4/services/pop*
@@ -136,7 +121,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 ldap module.
 
 %files -n kio4-ldap
-%defattr(-,root,root)
+
 %_kde_docdir/HTML/en/kioslave/ldap
 %_kde_libdir/kde4/kio_ldap.so
 %_kde_datadir/kde4/services/ldap*
@@ -154,7 +139,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 sieve module.
 
 %files -n kio4-sieve
-%defattr(-,root,root)
+
 %_kde_libdir/kde4/kio_sieve.so
 %_kde_datadir/kde4/services/sieve*
 %doc %_kde_docdir/HTML/en/kioslave/sieve
@@ -170,7 +155,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 mbox module.
 
 %files -n kio4-mbox
-%defattr(-,root,root)
+
 %_kde_libdir/kde4/kio_mbox.so
 %_kde_datadir/kde4/services/mbox*
 %doc %_kde_docdir/HTML/en/kioslave/mbox
@@ -186,7 +171,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 smtp module.
 
 %files -n kio4-smtp
-%defattr(-,root,root)
+
 %_kde_docdir/HTML/en/kioslave/smtp
 %_kde_libdir/kde4/kio_smtp.so
 %_kde_datadir/kde4/services/smtp*
@@ -202,7 +187,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 nntp module.
 
 %files -n kio4-nntp
-%defattr(-,root,root)
+
 %_kde_docdir/HTML/en/kioslave/nntp
 %_kde_libdir/kde4/kio_nntp.so
 %_kde_datadir/kde4/services/nntp*
@@ -221,7 +206,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkabc
-%defattr(-,root,root)
+
 %_kde_libdir/libkabc.so.%{kabc_major}*
 
 #------------------------------------------------	
@@ -238,7 +223,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkblog
-%defattr(-,root,root)
+
 %_kde_libdir/libkblog.so.%{kblog_major}*
 
 #------------------------------------------------	
@@ -255,7 +240,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkabc_file_core
-%defattr(-,root,root)
+
 %_kde_libdir/libkabc_file_core.so.%{kabc_file_core_major}*
 
 #------------------------------------------------	
@@ -272,7 +257,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkcal
-%defattr(-,root,root)
+
 %_kde_libdir/libkcal.so.%{kcal_major}*
 
 #------------------------------------------------	
@@ -289,7 +274,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkimap
-%defattr(-,root,root)
+
 %_kde_libdir/libkimap.so.%{kimap_major}*
 
 #------------------------------------------------	
@@ -306,7 +291,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkldap
-%defattr(-,root,root)
+
 %_kde_libdir/libkldap.so.%{kldap_major}*
 
 #------------------------------------------------
@@ -324,7 +309,7 @@ Obsoletes: %{_lib}mbox4 < 2:4.5.71
 KDE 4 core library.
 
 %files -n %libkmbox
-%defattr(-,root,root)
+
 %_kde_libdir/libkmbox.so.%{kmbox_major}*
 
 #------------------------------------------------	
@@ -341,7 +326,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkmime
-%defattr(-,root,root)
+
 %_kde_libdir/libkmime.so.%{kmime_major}*
 
 #------------------------------------------------	
@@ -358,7 +343,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkpimutils
-%defattr(-,root,root)
+
 %_kde_libdir/libkpimutils.so.%{kpimutils_major}*
 
 #------------------------------------------------	
@@ -375,7 +360,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkresources
-%defattr(-,root,root)
+
 %_kde_libdir/libkresources.so.%{kresources_major}*
 
 #------------------------------------------------	
@@ -392,7 +377,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libktnef
-%defattr(-,root,root)
+
 %_kde_libdir/libktnef.so.%{ktnef_major}*
 
 #------------------------------------------------	
@@ -409,7 +394,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkxmlrpcclient
-%defattr(-,root,root)
+
 %_kde_libdir/libkxmlrpcclient.so.%{kxmlrpcclient_major}*
 
 #------------------------------------------------	
@@ -426,7 +411,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libmailtransport
-%defattr(-,root,root)
+
 %_kde_libdir/libmailtransport.so.%{mailtransport_major}*
 
 #------------------------------------------------	
@@ -443,7 +428,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libsyndication
-%defattr(-,root,root)
+
 %_kde_libdir/libsyndication.so.%{syndication_major}*
 
 #--------------------------------------------------------------------------------
@@ -459,7 +444,7 @@ Group: System/Libraries
 KDE 4 core library.
 
 %files -n %libqgpgme
-%defattr(-,root,root)
+
 %_kde_libdir/libqgpgme.so.%{qgpgme_major}*
 
 #--------------------------------------------------------------------------------
@@ -476,7 +461,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libgpgmepp
-%defattr(-,root,root)
+
 %_kde_libdir/libgpgme+*.so.%{gpgmepp_major}*
 
 #--------------------------------------------------------------------------------
@@ -493,7 +478,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkpimidentities
-%defattr(-,root,root)
+
 %_kde_libdir/libkpimidentities.so.%{kpimidentities_major}*
 
 #------------------------------------------------	
@@ -510,7 +495,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libakonadi_kde
-%defattr(-,root,root)
+
 %_kde_libdir/libakonadi-kde.so.%{akonadi_kde_major}*
 
 
@@ -528,7 +513,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libakonadi_kabc
-%defattr(-,root,root)
+
 %_kde_libdir/libakonadi-kabc.so.%{akonadi_kabc_major}*
 
 #------------------------------------------------	
@@ -545,7 +530,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libakonadi_kmime
-%defattr(-,root,root)
+
 %_kde_libdir/libakonadi-kmime.so.%{akonadi_kmime_major}*
 
 #------------------------------------------------
@@ -562,7 +547,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkholidays
-%defattr(-,root,root)
+
 %_kde_libdir/libkholidays.so.%{kholidays_major}*
 
 #------------------------------------------------	
@@ -579,7 +564,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkpimtextedit
-%defattr(-,root,root)
+
 %_kde_libdir/libkpimtextedit.so.%{kpimtextedit_major}*
 
 #------------------------------------------------
@@ -596,7 +581,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libmicroblog
-%defattr(-,root,root)
+
 %_kde_libdir/libmicroblog.so.%{microblog_major}*
 
 #------------------------------------------------
@@ -613,7 +598,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libakonadi_contact
-%defattr(-,root,root)
+
 %_kde_libdir/libakonadi-contact.so.%{akonadi_contact_major}*
 
 #------------------------------------------------
@@ -630,7 +615,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libakonadi_kcal
-%defattr(-,root,root)
+
 %_kde_libdir/libakonadi-kcal.so.%{akonadi_kcal_major}*
 
 #------------------------------------------------
@@ -647,7 +632,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkontactinterface
-%defattr(-,root,root)
+
 %_kde_libdir/libkontactinterface.so.%{kontactinterface_major}*
 
 #------------------------------------------------
@@ -664,7 +649,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libakonadi_calendar
-%defattr(-,root,root)
+
 %_kde_libdir/libakonadi-calendar.so.%{akonadi_calendar_major}*
 
 #------------------------------------------------
@@ -681,7 +666,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkcalcore
-%defattr(-,root,root)
+
 %_kde_libdir/libkcalcore.so.%{kcalcore_major}*
 
 #------------------------------------------------
@@ -698,7 +683,7 @@ Requires: %{name}-core = %epoch:%version
 KDE 4 core library.
 
 %files -n %libkcalutils
-%defattr(-,root,root)
+
 %_kde_libdir/libkcalutils.so.%{kcalutils_major}*
 
 #------------------------------------------------
@@ -746,7 +731,6 @@ for KDE. Also included is the KDE API documentation in HTML format for easy
 browsing.
 
 %files devel
-%defattr(-,root,root,-)
 %_kde_includedir/*
 %_kde_libdir/*.so
 %_kde_datadir/apps/cmake/*/*
@@ -757,20 +741,12 @@ browsing.
 #--------------------------------------------------------------------------------
 
 %prep
-%if %branch
-%setup -q -n kdepimlibs-%version%{kde_snapshot}
-%else
 %setup -q -n kdepimlibs-%version
-%endif
 
 %build
 %cmake_kde4 
 %make
 
 %install
-rm -fr %buildroot
 %makeinstall_std -C build
-
-%clean
-rm -fr %buildroot
 
