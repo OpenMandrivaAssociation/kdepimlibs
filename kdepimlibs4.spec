@@ -688,6 +688,23 @@ KDE 4 core library.
 
 #------------------------------------------------
 
+%define akonadi_notes_major 4
+%define libakonadi_notes %mklibname akonadi-notes %{akonadi_notes_major}
+
+%package -n %libakonadi_notes
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libakonadi_notes
+KDE 4 core library.
+
+%files -n %libakonadi_notes
+
+%_kde_libdir/libakonadi-notes.so.%{akonadi_notes_major}*
+
+#------------------------------------------------
+
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
@@ -722,6 +739,7 @@ Requires: %libmailtransport = %epoch:%version
 Requires: %libmicroblog = %epoch:%version
 Requires: %libqgpgme = %epoch:%version
 Requires: %libsyndication = %epoch:%version
+Requires: %libakonadi_notes  = %epoch:%version
 Requires: boost-devel
 Conflicts: kdepim4-devel < 2:4.3.90
 
