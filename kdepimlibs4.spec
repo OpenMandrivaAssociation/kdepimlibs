@@ -1,6 +1,6 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.7.40
+Version: 4.7.41
 Release: 1
 Epoch: 2
 Group: Graphical desktop/KDE
