@@ -706,7 +706,7 @@ KDE 4 core library.
 
 #------------------------------------------------
 
-%define akonadi_notes_major 2
+%define kalarmcal_major 2
 %define libkalarmcal %mklibname kalarmcal %{kalarmcal_major}
 
 %package -n %libkalarmcal
