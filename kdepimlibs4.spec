@@ -706,6 +706,22 @@ KDE 4 core library.
 
 #------------------------------------------------
 
+%define akonadi_notes_major 2
+%define libkalarmcal %mklibname kalarmcal %{kalarmcal_major}
+
+%package -n %libkalarmcal
+Summary: KDE 4 core library
+Group: System/Libraries
+Requires: %{name}-core = %epoch:%version
+
+%description -n %libkalarmcal
+KDE 4 core library.
+
+%files -n %libkalarmcal
+%_kde_libdir/libkalarmcal.so.%{kalarmcal_major}*
+
+#------------------------------------------------
+
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files and documentation for compiling KDE applications
@@ -741,6 +757,7 @@ Requires: %libmicroblog = %epoch:%version
 Requires: %libqgpgme = %epoch:%version
 Requires: %libsyndication = %epoch:%version
 Requires: %libakonadi_notes  = %epoch:%version
+Requires: %libkalarmcal = %epoch:%version
 Requires: boost-devel
 Conflicts: kdepim4-devel < 2:4.3.90
 
