@@ -12,7 +12,7 @@ BuildRequires: openldap-devel
 BuildRequires: boost-devel
 BuildRequires: gpgme-devel
 BuildRequires: akonadi-devel >= 1:1.4.54
-BuildRequires: xft2-devel
+BuildRequires: libxft-devel
 BuildRequires: xpm-devel
 BuildRequires: libical-devel >= 0.41
 BuildRequires: automoc4
