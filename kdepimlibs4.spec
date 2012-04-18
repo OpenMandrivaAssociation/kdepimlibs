@@ -1,12 +1,12 @@
 Name: kdepimlibs4
 Summary: Libraries of the KDE-PIM project
-Version: 4.8.1
+Version: 4.8.2
 Release: 1
 Epoch: 2
 Group: Graphical desktop/KDE
 License: ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 BuildRoot: %_tmppath/%name-%version-%release-root
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepimlibs-%version.tar.xz
 BuildRequires: kdelibs4-devel >= 2:4.5.0
 BuildRequires: openldap-devel
 BuildRequires: boost-devel
