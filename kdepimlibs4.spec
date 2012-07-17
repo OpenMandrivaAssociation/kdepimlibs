@@ -8,13 +8,13 @@ License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/kdepimlibs-%{version}.tar.xz
 Patch0:		kdepimlibs-4.8.2-l10n-ru.patch
 BuildRequires:	kdelibs4-devel
-BuildRequires:	openldap-devel
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
-BuildRequires:	akonadi-devel
+BuildRequires:	openldap-devel
+BuildRequires:	pkgconfig(akonadi)
+BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(xft)
-BuildRequires:	xpm-devel
-BuildRequires:	libical-devel >= 0.41
+BuildRequires:	pkgconfig(xpm)
 BuildRequires:	automoc4
 
 %description
@@ -684,7 +684,6 @@ KDE 4 core library.
 %package devel
 Group:		Development/KDE and Qt
 Summary:	Header files and documentation for compiling KDE applications
-Requires:	kdelibs4-devel
 Requires:	%{name}-core = %{EVRD}
 Requires:	%{libakonadi_calendar} = %{EVRD}
 Requires:	%{libakonadi_contact} = %{EVRD}
@@ -717,6 +716,7 @@ Requires:	%{libqgpgme} = %{EVRD}
 Requires:	%{libsyndication} = %{EVRD}
 Requires:	%{libakonadi_notes} = %{EVRD}
 Requires:	%{libkalarmcal} = %{EVRD}
+Requires:	kdelibs4-devel
 Requires:	boost-devel
 
 %description devel
