@@ -1,11 +1,11 @@
 Name:		kdepimlibs4
 Summary:	Libraries of the KDE-PIM project
-Version:	4.8.97
-Release:	1
+Version: 4.9.0
+Release: 1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
-Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/kdepimlibs-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kdepimlibs-%{version}.tar.xz
 Patch0:		kdepimlibs-4.8.2-l10n-ru.patch
 BuildRequires:	kdelibs4-devel
 BuildRequires:	boost-devel
