@@ -736,7 +736,7 @@ browsing.
 
 %prep
 %setup -q -n kdepimlibs-%{version}
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %cmake_kde4
