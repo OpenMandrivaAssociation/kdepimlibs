@@ -16,7 +16,6 @@ BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	automoc4
-BuildRequires:	prison-devel
 
 %description
 This module includes libraries that are central to the development and
