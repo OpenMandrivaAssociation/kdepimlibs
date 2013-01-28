@@ -20,6 +20,7 @@ BuildRequires:	pkgconfig(akonadi)
 BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
+BuildRequires:	pkgconfig(QJson)
 BuildRequires:	automoc4
 
 %description
