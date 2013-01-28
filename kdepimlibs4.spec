@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(QJson)
+BuildRequires:	nepomuk-core-devel
 BuildRequires:	automoc4
 
 %description
