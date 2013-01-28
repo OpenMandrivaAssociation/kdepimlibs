@@ -1,11 +1,17 @@
 Name:		kdepimlibs4
 Summary:	Libraries of the KDE-PIM project
-Version:	4.9.4
+Version:	4.9.98
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kdepimlibs-%{version}.tar.xz
+%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %is_beta
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Source:		ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/kdepimlibs-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
@@ -73,6 +79,12 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_datadir}/mime/packages/kdepimlibs-mime.xml
 %{_kde_docdir}/HTML/en/kcontrol/kresources
 %dir %{_kde_docdir}/HTML/en/kioslave
+%_kde_bindir/akonadi_benchmarker
+%_kde_bindir/akonaditest
+%_kde_libdir/kde4/akonadi_serializer_socialfeeditem.so
+%_kde_datadir/mime/packages/x-vnd.akonadi.socialfeeditem.xml
+
+
 
 #------------------------------------------------
 
@@ -472,6 +484,24 @@ KDE 4 core library.
 
 #------------------------------------------------
 
+%define akonadi_socialutils_major 4
+%define libakonadi_socialutils %mklibname akonadi-socialutils %{akonadi_socialutils_major}
+
+%package -n %{libakonadi_socialutils}
+Summary:	Akonadi social utilities library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_socialutils}
+Akonadi social utilities library
+
+%files -n %{libakonadi_socialutils}
+%_kde_libdir/libakonadi-socialutils.so.4
+%_kde_libdir/libakonadi-socialutils.so.4.10.0
+
+
+#------------------------------------------------
+
 %define akonadi_kabc_major 4
 %define libakonadi_kabc %mklibname akonadi-kabc %{akonadi_kabc_major}
 
@@ -726,6 +756,8 @@ browsing.
 %files devel
 %{_kde_includedir}/*
 %{_kde_libdir}/*.so
+# kimaptest gets built as static lib only
+%{_kde_libdir}/libkimaptest.a
 %{_kde_datadir}/apps/cmake/*/*
 %{_kde_libdir}/gpgmepp/*.cmake
 %{_kde_libdir}/kde4/plugins/designer/*.so
