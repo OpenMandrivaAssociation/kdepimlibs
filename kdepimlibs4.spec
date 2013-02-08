@@ -1,17 +1,17 @@
 Name:		kdepimlibs4
 Summary:	Libraries of the KDE-PIM project
-Version:	4.9.98
+Version:	4.10.0
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 %define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %is_beta
+%if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Source:		ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/kdepimlibs-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepimlibs-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
@@ -81,11 +81,10 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_datadir}/mime/packages/kdepimlibs-mime.xml
 %{_kde_docdir}/HTML/en/kcontrol/kresources
 %dir %{_kde_docdir}/HTML/en/kioslave
-%_kde_bindir/akonadi_benchmarker
-%_kde_bindir/akonaditest
-%_kde_libdir/kde4/akonadi_serializer_socialfeeditem.so
-%_kde_datadir/mime/packages/x-vnd.akonadi.socialfeeditem.xml
-
+%{_kde_bindir}/akonadi_benchmarker
+%{_kde_bindir}/akonaditest
+%{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
+%{_kde_datadir}/mime/packages/x-vnd.akonadi.socialfeeditem.xml
 
 
 #------------------------------------------------
@@ -498,8 +497,8 @@ Requires:	%{name}-core = %{EVRD}
 Akonadi social utilities library
 
 %files -n %{libakonadi_socialutils}
-%_kde_libdir/libakonadi-socialutils.so.4
-%_kde_libdir/libakonadi-socialutils.so.4.10.0
+%{_kde_libdir}/libakonadi-socialutils.so.4
+%{_kde_libdir}/libakonadi-socialutils.so.4.10.0
 
 
 #------------------------------------------------
@@ -721,6 +720,7 @@ Requires:	%{libakonadi_contact} = %{EVRD}
 Requires:	%{libakonadi_kabc} = %{EVRD}
 Requires:	%{libakonadi_kcal} = %{EVRD}
 Requires:	%{libakonadi_kde} = %{EVRD}
+Requires:	%{libakonadi_socialutils} = %{EVRD}
 Requires:	%{libakonadi_kmime} = %{EVRD}
 Requires:	%{libgpgmepp} = %{EVRD}
 Requires:	%{libkabc} = %{EVRD}
@@ -778,6 +778,12 @@ browsing.
 %makeinstall_std -C build
 
 %changelog
+* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.0-1
+- New version 4.10.0
+- New subpackage libakonadi_socialutils
+- Update files
+- Add BuildRequires pkgconfig(QJson) and nepomuk-core-devel
+
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.9.4-1
 - New version 4.9.4
 
