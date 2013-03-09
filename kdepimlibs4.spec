@@ -497,8 +497,7 @@ Requires:	%{name}-core = %{EVRD}
 Akonadi social utilities library.
 
 %files -n %{libakonadi_socialutils}
-%{_kde_libdir}/libakonadi-socialutils.so.%{akonadi_socialutils_major}
-
+%{_kde_libdir}/libakonadi-socialutils.so.%{akonadi_socialutils_major}*
 
 #------------------------------------------------
 
