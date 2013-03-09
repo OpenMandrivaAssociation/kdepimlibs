@@ -494,11 +494,10 @@ Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_socialutils}
-Akonadi social utilities library
+Akonadi social utilities library.
 
 %files -n %{libakonadi_socialutils}
-%{_kde_libdir}/libakonadi-socialutils.so.4
-%{_kde_libdir}/libakonadi-socialutils.so.4.10.0
+%{_kde_libdir}/libakonadi-socialutils.so.%{akonadi_socialutils_major}
 
 
 #------------------------------------------------
@@ -780,6 +779,7 @@ browsing.
 %changelog
 * Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.1-1
 - New version 4.10.1
+- Fix files
 
 * Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.0-1
 - New version 4.10.0
