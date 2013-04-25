@@ -35,7 +35,7 @@ management.
 This rather broad scope encompasses mail clients, addressbooks, usenet news,
 scheduling and even sticky notes.
 
-#--------------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package core
 Group:		Development/KDE and Qt
@@ -86,8 +86,7 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
 %{_kde_datadir}/mime/packages/x-vnd.akonadi.socialfeeditem.xml
 
-
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package -n kio4-imap
 Summary:	KDE 4 imap module
@@ -102,7 +101,7 @@ KDE 4 imap module.
 %{_kde_libdir}/kde4/kio_imap4.so
 %{_kde_datadir}/kde4/services/imap*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package -n kio4-pop3
 Summary:	KDE 4 pop3 module
@@ -117,7 +116,7 @@ KDE 4 pop3 module.
 %{_kde_libdir}/kde4/kio_pop3.so
 %{_kde_datadir}/kde4/services/pop*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package -n kio4-ldap
 Summary:	KDE 4 ldap module
@@ -134,7 +133,7 @@ KDE 4 ldap module.
 %{_kde_libdir}/kde4/kabc_ldapkio.so
 %{_kde_datadir}/kde4/services/kresources/kabc/ldapkio.desktop
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package -n kio4-sieve
 Summary:	KDE 4 sieve module
@@ -149,7 +148,7 @@ KDE 4 sieve module.
 %{_kde_datadir}/kde4/services/sieve*
 %doc %{_kde_docdir}/HTML/en/kioslave/sieve
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package -n kio4-mbox
 Summary:	KDE 4 mbox module
@@ -164,7 +163,7 @@ KDE 4 mbox module.
 %{_kde_datadir}/kde4/services/mbox*
 %doc %{_kde_docdir}/HTML/en/kioslave/mbox
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package -n kio4-smtp
 Summary:	KDE 4 smtp module
@@ -179,7 +178,7 @@ KDE 4 smtp module.
 %{_kde_libdir}/kde4/kio_smtp.so
 %{_kde_datadir}/kde4/services/smtp*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package -n kio4-nntp
 Summary:	KDE 4 nntp module
@@ -194,7 +193,7 @@ KDE 4 nntp module.
 %{_kde_libdir}/kde4/kio_nntp.so
 %{_kde_datadir}/kde4/services/nntp*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kabc_major 4
 %define libkabc %mklibname kabc %{kabc_major}
@@ -210,7 +209,7 @@ KDE 4 core library.
 %files -n %{libkabc}
 %{_kde_libdir}/libkabc.so.%{kabc_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kblog_major 4
 %define libkblog %mklibname kblog %{kblog_major}
@@ -226,7 +225,7 @@ KDE 4 core library.
 %files -n %{libkblog}
 %{_kde_libdir}/libkblog.so.%{kblog_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kabc_file_core_major 4
 %define libkabc_file_core %mklibname kabc_file_core %{kabc_file_core_major}
@@ -242,7 +241,7 @@ KDE 4 core library.
 %files -n %{libkabc_file_core}
 %{_kde_libdir}/libkabc_file_core.so.%{kabc_file_core_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kcal_major 4
 %define libkcal %mklibname kcal %{kcal_major}
@@ -258,7 +257,7 @@ KDE 4 core library.
 %files -n %{libkcal}
 %{_kde_libdir}/libkcal.so.%{kcal_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kimap_major 4
 %define libkimap %mklibname kimap %{kimap_major}
@@ -274,7 +273,7 @@ KDE 4 core library.
 %files -n %{libkimap}
 %{_kde_libdir}/libkimap.so.%{kimap_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kldap_major 4
 %define libkldap %mklibname kldap %{kldap_major}
@@ -290,7 +289,7 @@ KDE 4 core library.
 %files -n %{libkldap}
 %{_kde_libdir}/libkldap.so.%{kldap_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kmbox_major 4
 %define libkmbox %mklibname kmbox %{kmbox_major}
@@ -307,7 +306,7 @@ KDE 4 core library.
 %files -n %{libkmbox}
 %{_kde_libdir}/libkmbox.so.%{kmbox_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kmime_major 4
 %define libkmime %mklibname kmime %{kmime_major}
@@ -323,7 +322,7 @@ KDE 4 core library.
 %files -n %{libkmime}
 %{_kde_libdir}/libkmime.so.%{kmime_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kpimutils_major 4
 %define libkpimutils %mklibname kpimutils %{kpimutils_major}
@@ -339,7 +338,7 @@ KDE 4 core library.
 %files -n %{libkpimutils}
 %{_kde_libdir}/libkpimutils.so.%{kpimutils_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kresources_major 4
 %define libkresources %mklibname kresources %{kresources_major}
@@ -355,7 +354,7 @@ KDE 4 core library.
 %files -n %{libkresources}
 %{_kde_libdir}/libkresources.so.%{kresources_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define ktnef_major 4
 %define libktnef %mklibname ktnef %{ktnef_major}
@@ -371,7 +370,7 @@ KDE 4 core library.
 %files -n %{libktnef}
 %{_kde_libdir}/libktnef.so.%{ktnef_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kxmlrpcclient_major 4
 %define libkxmlrpcclient %mklibname kxmlrpcclient %{kxmlrpcclient_major}
@@ -387,7 +386,7 @@ KDE 4 core library.
 %files -n %{libkxmlrpcclient}
 %{_kde_libdir}/libkxmlrpcclient.so.%{kxmlrpcclient_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define mailtransport_major 4
 %define libmailtransport %mklibname mailtransport %{mailtransport_major}
@@ -419,7 +418,7 @@ KDE 4 core library.
 %files -n %{libsyndication}
 %{_kde_libdir}/libsyndication.so.%{syndication_major}*
 
-#--------------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define qgpgme_major 1
 %define libqgpgme %mklibname qgpgme %{qgpgme_major}
@@ -434,7 +433,7 @@ KDE 4 core library.
 %files -n %{libqgpgme}
 %{_kde_libdir}/libqgpgme.so.%{qgpgme_major}*
 
-#--------------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define gpgmepp_major 2
 %define libgpgmepp %mklibname gpgme++ %{gpgmepp_major}
@@ -450,7 +449,7 @@ KDE 4 core library.
 %files -n %{libgpgmepp}
 %{_kde_libdir}/libgpgme+*.so.%{gpgmepp_major}*
 
-#--------------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kpimidentities_major 4
 %define libkpimidentities %mklibname kpimidentities %{kpimidentities_major}
@@ -466,7 +465,7 @@ KDE 4 core library.
 %files -n %{libkpimidentities}
 %{_kde_libdir}/libkpimidentities.so.%{kpimidentities_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_kde_major 4
 %define libakonadi_kde %mklibname akonadi-kde %{akonadi_kde_major}
@@ -482,8 +481,7 @@ KDE 4 core library.
 %files -n %{libakonadi_kde}
 %{_kde_libdir}/libakonadi-kde.so.%{akonadi_kde_major}*
 
-
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_socialutils_major 4
 %define libakonadi_socialutils %mklibname akonadi-socialutils %{akonadi_socialutils_major}
@@ -499,7 +497,7 @@ Akonadi social utilities library.
 %files -n %{libakonadi_socialutils}
 %{_kde_libdir}/libakonadi-socialutils.so.%{akonadi_socialutils_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_kabc_major 4
 %define libakonadi_kabc %mklibname akonadi-kabc %{akonadi_kabc_major}
@@ -515,7 +513,7 @@ KDE 4 core library.
 %files -n %{libakonadi_kabc}
 %{_kde_libdir}/libakonadi-kabc.so.%{akonadi_kabc_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_kmime_major 4
 %define libakonadi_kmime %mklibname akonadi-kmime %{akonadi_kmime_major}
@@ -531,7 +529,7 @@ KDE 4 core library.
 %files -n %{libakonadi_kmime}
 %{_kde_libdir}/libakonadi-kmime.so.%{akonadi_kmime_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kholidays_major 4
 %define libkholidays %mklibname kholidays %{kholidays_major}
@@ -547,7 +545,7 @@ KDE 4 core library.
 %files -n %{libkholidays}
 %{_kde_libdir}/libkholidays.so.%{kholidays_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kpimtextedit_major 4
 %define libkpimtextedit %mklibname kpimtextedit %{kpimtextedit_major}
@@ -563,7 +561,7 @@ KDE 4 core library.
 %files -n %{libkpimtextedit}
 %{_kde_libdir}/libkpimtextedit.so.%{kpimtextedit_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define microblog_major 4
 %define libmicroblog %mklibname microblog %{microblog_major}
@@ -579,7 +577,7 @@ KDE 4 core library.
 %files -n %{libmicroblog}
 %{_kde_libdir}/libmicroblog.so.%{microblog_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_contact_major 4
 %define libakonadi_contact %mklibname akonadi-contact %{akonadi_contact_major}
@@ -595,7 +593,7 @@ KDE 4 core library.
 %files -n %{libakonadi_contact}
 %{_kde_libdir}/libakonadi-contact.so.%{akonadi_contact_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_kcal_major 4
 %define libakonadi_kcal %mklibname akonadi-kcal %{akonadi_kcal_major}
@@ -611,7 +609,7 @@ KDE 4 core library.
 %files -n %{libakonadi_kcal}
 %{_kde_libdir}/libakonadi-kcal.so.%{akonadi_kcal_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kontactinterface_major 4
 %define libkontactinterface %mklibname kontactinterface %{kontactinterface_major}
@@ -627,7 +625,7 @@ KDE 4 core library.
 %files -n %{libkontactinterface}
 %{_kde_libdir}/libkontactinterface.so.%{kontactinterface_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_calendar_major 4
 %define libakonadi_calendar %mklibname akonadi-calendar %{akonadi_calendar_major}
@@ -643,7 +641,7 @@ KDE 4 core library.
 %files -n %{libakonadi_calendar}
 %{_kde_libdir}/libakonadi-calendar.so.%{akonadi_calendar_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kcalcore_major 4
 %define libkcalcore %mklibname kcalcore %{kcalcore_major}
@@ -659,7 +657,7 @@ KDE 4 core library.
 %files -n %{libkcalcore}
 %{_kde_libdir}/libkcalcore.so.%{kcalcore_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kcalutils_major 4
 %define libkcalutils %mklibname kcalutils %{kcalutils_major}
@@ -675,7 +673,7 @@ KDE 4 core library.
 %files -n %{libkcalutils}
 %{_kde_libdir}/libkcalutils.so.%{kcalutils_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define akonadi_notes_major 4
 %define libakonadi_notes %mklibname akonadi-notes %{akonadi_notes_major}
@@ -691,7 +689,7 @@ KDE 4 core library.
 %files -n %{libakonadi_notes}
 %{_kde_libdir}/libakonadi-notes.so.%{akonadi_notes_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %define kalarmcal_major 2
 %define libkalarmcal %mklibname kalarmcal %{kalarmcal_major}
@@ -707,7 +705,7 @@ KDE 4 core library.
 %files -n %{libkalarmcal}
 %{_kde_libdir}/libkalarmcal.so.%{kalarmcal_major}*
 
-#------------------------------------------------
+#----------------------------------------------------------------------------
 
 %package devel
 Group:		Development/KDE and Qt
@@ -765,7 +763,7 @@ browsing.
 %{_kde_libdir}/kde4/plugins/designer/*.so
 %{_kde_libdir}/cmake/KdepimLibs
 
-#--------------------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q -n kdepimlibs-%{version}
