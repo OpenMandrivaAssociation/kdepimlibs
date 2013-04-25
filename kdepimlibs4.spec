@@ -1,11 +1,11 @@
 Name:		kdepimlibs4
 Summary:	Libraries of the KDE-PIM project
 Version:	4.10.2
-Release:	1
+Release:	2
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
-%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
@@ -747,6 +747,8 @@ Requires:	%{libakonadi_notes} = %{EVRD}
 Requires:	%{libkalarmcal} = %{EVRD}
 Requires:	kdelibs4-devel
 Requires:	boost-devel
+# To avoid file conflict (FindQtOAuth.cmake)
+Conflicts:	choqok-devel < 1.3-3
 
 %description devel
 This package includes the header files you will need to compile applications
@@ -776,6 +778,9 @@ browsing.
 %makeinstall_std -C build
 
 %changelog
+* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.2-2
+- Add Conflicts with choqok-devel for devel package to avoid file conflicts
+
 * Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.2-1
 - New version 4.10.2
 
