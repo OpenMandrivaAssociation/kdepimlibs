@@ -1,10 +1,11 @@
-Name:		kdepimlibs4
 Summary:	Libraries of the KDE-PIM project
-Version:	4.10.3
+Name:		kdepimlibs4
+Version:	4.10.4
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
+Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -12,17 +13,17 @@ License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 %define ftpdir stable
 %endif
 Source:		ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepimlibs-%{version}.tar.xz
+BuildRequires:	automoc4
 BuildRequires:	kdelibs4-devel
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
+BuildRequires:	nepomuk-core-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig(akonadi)
 BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(QJson)
-BuildRequires:	nepomuk-core-devel
-BuildRequires:	automoc4
 
 %description
 This module includes libraries that are central to the development and
@@ -776,6 +777,9 @@ browsing.
 %makeinstall_std -C build
 
 %changelog
+* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.4-1
+- New version 4.10.4
+
 * Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.3-1
 - New version 4.10.3
 
