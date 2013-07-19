@@ -21,6 +21,7 @@ BuildRequires:	nepomuk-core-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig(akonadi)
 BuildRequires:	pkgconfig(libical)
+BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	pkgconfig(xft)
