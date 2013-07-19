@@ -1,8 +1,8 @@
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs4
-Version:	4.10.5
-Release:	1
 Epoch:		2
+Version:	4.10.5
+Release:	2
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 Url:		https://projects.kde.org/projects/kde/kdepimlibs
@@ -21,9 +21,10 @@ BuildRequires:	nepomuk-core-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig(akonadi)
 BuildRequires:	pkgconfig(libical)
+BuildRequires:	pkgconfig(QJson)
+BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
-BuildRequires:	pkgconfig(QJson)
 
 %description
 This module includes libraries that are central to the development and
@@ -777,6 +778,9 @@ browsing.
 %makeinstall_std -C build
 
 %changelog
+* Fri Jul 19 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.5-2
+- Update BuildRequires
+
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.5-1
 - New version 4.10.5
 
