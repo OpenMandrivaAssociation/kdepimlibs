@@ -46,11 +46,17 @@ Summary:	Config file and icons file for %{name}
 Obsoletes:	kdepimlibs4-common < %{EVRD}
 Obsoletes:	kdepim4-ioslaves < %{EVRD}
 Conflicts:	%{name}-devel < 2.4.5.71
+Conflicts:	akonadi-kde < 3:4.12.0
 
 %description core
 This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
+%{_kde_bindir}/akonadi_benchmarker
+%{_kde_bindir}/akonadi2xml
+%{_kde_bindir}/akonaditest
+%{_kde_libdir}/kde4/akonadi_knut_resource.so
+%{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
 %{_kde_libdir}/kde4/kabc_directory.so
 %{_kde_libdir}/kde4/kabc_file.so
 %{_kde_libdir}/kde4/kabc_net.so
@@ -60,13 +66,13 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_libdir}/kde4/kcm_akonadicontact_actions.so
 %{_kde_libdir}/kde4/kcm_kresources.so
 %{_kde_libdir}/kde4/kcm_mailtransport.so
-%{_kde_datadir}/config.kcfg/*
-%{_kde_appsdir}/akonadi
-%{_kde_appsdir}/akonadi-kde
-%{_kde_appsdir}/kabc
+%{_kde_appsdir}/akonadi/
+%{_kde_appsdir}/akonadi-kde/
+%{_kde_appsdir}/akonadi_knut_resource/
+%{_kde_appsdir}/kabc/
 %{_kde_appsdir}/kconf_update/mailtransports.upd
 %{_kde_appsdir}/kconf_update/migrate-transports.pl
-%{_kde_appsdir}/libkholidays
+%{_kde_appsdir}/libkholidays/
 %{_kde_services}/akonadi/contact
 %{_kde_services}/akonadicontact_actions.desktop
 %{_kde_services}/kcm_mailtransport.desktop
@@ -81,13 +87,12 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_services}/kresources/kcal_manager.desktop
 %{_kde_servicetypes}/*.desktop
 %{_datadir}/dbus-1/interfaces/*
+%{_kde_datadir}/akonadi/agents/knutresource.desktop
+%{_kde_datadir}/config.kcfg/*
 %{_kde_datadir}/mime/packages/kdepimlibs-mime.xml
+%{_kde_datadir}/mime/packages/x-vnd.akonadi.socialfeeditem.xml
 %{_kde_docdir}/HTML/en/kcontrol/kresources
 %dir %{_kde_docdir}/HTML/en/kioslave
-%{_kde_bindir}/akonadi_benchmarker
-%{_kde_bindir}/akonaditest
-%{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
-%{_kde_datadir}/mime/packages/x-vnd.akonadi.socialfeeditem.xml
 
 #----------------------------------------------------------------------------
 
@@ -195,6 +200,149 @@ KDE 4 nntp module.
 %{_kde_docdir}/HTML/en/kioslave/nntp
 %{_kde_libdir}/kde4/kio_nntp.so
 %{_kde_datadir}/kde4/services/nntp*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_calendar_major 4
+%define libakonadi_calendar %mklibname akonadi-calendar %{akonadi_calendar_major}
+
+%package -n %{libakonadi_calendar}
+Summary:	KDE 4 core library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_calendar}
+KDE 4 core library.
+
+%files -n %{libakonadi_calendar}
+%{_kde_libdir}/libakonadi-calendar.so.%{akonadi_calendar_major}*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_contact_major 4
+%define libakonadi_contact %mklibname akonadi-contact %{akonadi_contact_major}
+
+%package -n %{libakonadi_contact}
+Summary:	KDE 4 core library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_contact}
+KDE 4 core library.
+
+%files -n %{libakonadi_contact}
+%{_kde_libdir}/libakonadi-contact.so.%{akonadi_contact_major}*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_kabc_major 4
+%define libakonadi_kabc %mklibname akonadi-kabc %{akonadi_kabc_major}
+
+%package -n %{libakonadi_kabc}
+Summary:	KDE 4 core library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_kabc}
+KDE 4 core library.
+
+%files -n %{libakonadi_kabc}
+%{_kde_libdir}/libakonadi-kabc.so.%{akonadi_kabc_major}*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_kcal_major 4
+%define libakonadi_kcal %mklibname akonadi-kcal %{akonadi_kcal_major}
+
+%package -n %{libakonadi_kcal}
+Summary:	KDE 4 core library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_kcal}
+KDE 4 core library.
+
+%files -n %{libakonadi_kcal}
+%{_kde_libdir}/libakonadi-kcal.so.%{akonadi_kcal_major}*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_kde_major 4
+%define libakonadi_kde %mklibname akonadi-kde %{akonadi_kde_major}
+
+%package -n %{libakonadi_kde}
+Summary:	KDE 4 core library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_kde}
+KDE 4 core library.
+
+%files -n %{libakonadi_kde}
+%{_kde_libdir}/libakonadi-kde.so.%{akonadi_kde_major}*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_kmime_major 4
+%define libakonadi_kmime %mklibname akonadi-kmime %{akonadi_kmime_major}
+
+%package -n %{libakonadi_kmime}
+Summary:	KDE 4 core library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_kmime}
+KDE 4 core library.
+
+%files -n %{libakonadi_kmime}
+%{_kde_libdir}/libakonadi-kmime.so.%{akonadi_kmime_major}*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_notes_major 4
+%define libakonadi_notes %mklibname akonadi-notes %{akonadi_notes_major}
+
+%package -n %{libakonadi_notes}
+Summary:	KDE 4 core library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_notes}
+KDE 4 core library.
+
+%files -n %{libakonadi_notes}
+%{_kde_libdir}/libakonadi-notes.so.%{akonadi_notes_major}*
+
+#----------------------------------------------------------------------------
+
+%define akonadi_socialutils_major 4
+%define libakonadi_socialutils %mklibname akonadi-socialutils %{akonadi_socialutils_major}
+
+%package -n %{libakonadi_socialutils}
+Summary:	Akonadi social utilities library
+Group:		System/Libraries
+Requires:	%{name}-core = %{EVRD}
+
+%description -n %{libakonadi_socialutils}
+Akonadi social utilities library.
+
+%files -n %{libakonadi_socialutils}
+%{_kde_libdir}/libakonadi-socialutils.so.%{akonadi_socialutils_major}*
+
+#-----------------------------------------------------------------------------
+
+%define akonadi_xml_major 4
+%define libakonadi_xml %mklibname akonadi-xml %{akonadi_xml_major}
+
+%package -n %{libakonadi_xml}
+Summary:	KDE 4 library
+Group:		System/Libraries
+
+%description -n %{libakonadi_xml}
+KDE 4 library.
+
+%files -n %{libakonadi_xml}
+%{_kde_libdir}/libakonadi-xml.so.%{akonadi_xml_major}*
 
 #----------------------------------------------------------------------------
 
@@ -470,70 +618,6 @@ KDE 4 core library.
 
 #----------------------------------------------------------------------------
 
-%define akonadi_kde_major 4
-%define libakonadi_kde %mklibname akonadi-kde %{akonadi_kde_major}
-
-%package -n %{libakonadi_kde}
-Summary:	KDE 4 core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_kde}
-KDE 4 core library.
-
-%files -n %{libakonadi_kde}
-%{_kde_libdir}/libakonadi-kde.so.%{akonadi_kde_major}*
-
-#----------------------------------------------------------------------------
-
-%define akonadi_socialutils_major 4
-%define libakonadi_socialutils %mklibname akonadi-socialutils %{akonadi_socialutils_major}
-
-%package -n %{libakonadi_socialutils}
-Summary:	Akonadi social utilities library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_socialutils}
-Akonadi social utilities library.
-
-%files -n %{libakonadi_socialutils}
-%{_kde_libdir}/libakonadi-socialutils.so.%{akonadi_socialutils_major}*
-
-#----------------------------------------------------------------------------
-
-%define akonadi_kabc_major 4
-%define libakonadi_kabc %mklibname akonadi-kabc %{akonadi_kabc_major}
-
-%package -n %{libakonadi_kabc}
-Summary:	KDE 4 core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_kabc}
-KDE 4 core library.
-
-%files -n %{libakonadi_kabc}
-%{_kde_libdir}/libakonadi-kabc.so.%{akonadi_kabc_major}*
-
-#----------------------------------------------------------------------------
-
-%define akonadi_kmime_major 4
-%define libakonadi_kmime %mklibname akonadi-kmime %{akonadi_kmime_major}
-
-%package -n %{libakonadi_kmime}
-Summary:	KDE 4 core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_kmime}
-KDE 4 core library.
-
-%files -n %{libakonadi_kmime}
-%{_kde_libdir}/libakonadi-kmime.so.%{akonadi_kmime_major}*
-
-#----------------------------------------------------------------------------
-
 %define kholidays_major 4
 %define libkholidays %mklibname kholidays %{kholidays_major}
 
@@ -582,38 +666,6 @@ KDE 4 core library.
 
 #----------------------------------------------------------------------------
 
-%define akonadi_contact_major 4
-%define libakonadi_contact %mklibname akonadi-contact %{akonadi_contact_major}
-
-%package -n %{libakonadi_contact}
-Summary:	KDE 4 core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_contact}
-KDE 4 core library.
-
-%files -n %{libakonadi_contact}
-%{_kde_libdir}/libakonadi-contact.so.%{akonadi_contact_major}*
-
-#----------------------------------------------------------------------------
-
-%define akonadi_kcal_major 4
-%define libakonadi_kcal %mklibname akonadi-kcal %{akonadi_kcal_major}
-
-%package -n %{libakonadi_kcal}
-Summary:	KDE 4 core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_kcal}
-KDE 4 core library.
-
-%files -n %{libakonadi_kcal}
-%{_kde_libdir}/libakonadi-kcal.so.%{akonadi_kcal_major}*
-
-#----------------------------------------------------------------------------
-
 %define kontactinterface_major 4
 %define libkontactinterface %mklibname kontactinterface %{kontactinterface_major}
 
@@ -627,22 +679,6 @@ KDE 4 core library.
 
 %files -n %{libkontactinterface}
 %{_kde_libdir}/libkontactinterface.so.%{kontactinterface_major}*
-
-#----------------------------------------------------------------------------
-
-%define akonadi_calendar_major 4
-%define libakonadi_calendar %mklibname akonadi-calendar %{akonadi_calendar_major}
-
-%package -n %{libakonadi_calendar}
-Summary:	KDE 4 core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_calendar}
-KDE 4 core library.
-
-%files -n %{libakonadi_calendar}
-%{_kde_libdir}/libakonadi-calendar.so.%{akonadi_calendar_major}*
 
 #----------------------------------------------------------------------------
 
@@ -678,22 +714,6 @@ KDE 4 core library.
 
 #----------------------------------------------------------------------------
 
-%define akonadi_notes_major 4
-%define libakonadi_notes %mklibname akonadi-notes %{akonadi_notes_major}
-
-%package -n %{libakonadi_notes}
-Summary:	KDE 4 core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadi_notes}
-KDE 4 core library.
-
-%files -n %{libakonadi_notes}
-%{_kde_libdir}/libakonadi-notes.so.%{akonadi_notes_major}*
-
-#----------------------------------------------------------------------------
-
 %define kalarmcal_major 2
 %define libkalarmcal %mklibname kalarmcal %{kalarmcal_major}
 
@@ -719,8 +739,10 @@ Requires:	%{libakonadi_contact} = %{EVRD}
 Requires:	%{libakonadi_kabc} = %{EVRD}
 Requires:	%{libakonadi_kcal} = %{EVRD}
 Requires:	%{libakonadi_kde} = %{EVRD}
-Requires:	%{libakonadi_socialutils} = %{EVRD}
 Requires:	%{libakonadi_kmime} = %{EVRD}
+Requires:	%{libakonadi_notes} = %{EVRD}
+Requires:	%{libakonadi_socialutils} = %{EVRD}
+Requires:	%{libakonadi_xml} = %{EVRD}
 Requires:	%{libgpgmepp} = %{EVRD}
 Requires:	%{libkabc} = %{EVRD}
 Requires:	%{libkabc_file_core} = %{EVRD}
@@ -744,7 +766,6 @@ Requires:	%{libmailtransport} = %{EVRD}
 Requires:	%{libmicroblog} = %{EVRD}
 Requires:	%{libqgpgme} = %{EVRD}
 Requires:	%{libsyndication} = %{EVRD}
-Requires:	%{libakonadi_notes} = %{EVRD}
 Requires:	%{libkalarmcal} = %{EVRD}
 Requires:	kdelibs4-devel
 Requires:	boost-devel
@@ -781,6 +802,9 @@ browsing.
 %changelog
 * Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.12.1-1
 - New version 4.12.1
+- Some files were moved from kdepim4-runtime tarball here
+- Move some files from akonadi-kde to kdepimlibs4-core
+- Move libakonadi-xml subpackage here
 
 * Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.11.4-1
 - New version 4.11.4
