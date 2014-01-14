@@ -1,8 +1,8 @@
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs4
-Epoch:		2
+Epoch:		3
 Version:	4.12.1
-Release:	1
+Release:	2
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
 Url:		https://projects.kde.org/projects/kde/kdepimlibs
@@ -800,6 +800,9 @@ browsing.
 %makeinstall_std -C build
 
 %changelog
+* Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.12.1-2
+- Bump epoch because of moved libakonadi-xml subpackage
+
 * Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.12.1-1
 - New version 4.12.1
 - Some files were moved from kdepim4-runtime tarball here
