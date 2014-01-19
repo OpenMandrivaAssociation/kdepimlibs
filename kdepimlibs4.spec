@@ -14,7 +14,7 @@ Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %endif
 Source:		ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepimlibs-%{version}.tar.xz
 BuildRequires:	automoc4
-BuildRequires:	kdelibs4-devel
+BuildRequires:	kdelibs4-devel >= %{version}
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
 BuildRequires:	nepomuk-core-devel
