@@ -65,6 +65,8 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_libdir}/kde4/kcm_akonadicontact_actions.so
 %{_kde_libdir}/kde4/kcm_kresources.so
 %{_kde_libdir}/kde4/kcm_mailtransport.so
+%{_kde_libdir}/kde4/akonadi/akonadi_test_searchplugin.so
+%{_kde_libdir}/kde4/akonadi/akonaditestsearchplugin.desktop
 %{_kde_appsdir}/akonadi/
 %{_kde_appsdir}/akonadi-kde/
 %{_kde_appsdir}/akonadi_knut_resource/
@@ -802,6 +804,7 @@ browsing.
 * Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.13.2-1
 - New version 4.13.2
 - Drop no longer needed BuildRequires nepomuk-core-devel
+- Update files
 
 * Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.12.4-1
 - New version 4.12.4
