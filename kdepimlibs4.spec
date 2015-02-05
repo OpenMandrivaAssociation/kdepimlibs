@@ -1,6 +1,6 @@
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs4
-Version:	4.14.4
+Version:	4.14.5
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -12,7 +12,7 @@ Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepimlibs-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/applications/14.12.2/src/kdepimlibs-%{version}.tar.xz
 BuildRequires:	automoc4
 BuildRequires:	kdelibs4-devel >= %{version}
 BuildRequires:	boost-devel
