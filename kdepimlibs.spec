@@ -1,7 +1,7 @@
 Summary:	Libraries of the KDE-PIM project
-Name:		kdepimlibs4
+Name:		kdepimlibs
 Version:	4.14.8
-Release:	1
+Release:	2
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -12,9 +12,9 @@ Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/applications/14.12.2/src/kdepimlibs-%{version}.tar.xz
+Source0:	http://download.kde.org/%{ftpdir}/applications/14.12.2/src/%{name}-%{version}.tar.xz
 BuildRequires:	automoc4
-BuildRequires:	kdelibs4-devel >= %{version}
+BuildRequires:	kdelibs-devel >= %{version}
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
 BuildRequires:	openldap-devel
@@ -25,6 +25,7 @@ BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
+%rename	kdepimlibs4
 
 %description
 This module includes libraries that are central to the development and
@@ -46,6 +47,7 @@ Obsoletes:	kdepimlibs4-common < %{EVRD}
 Obsoletes:	kdepim4-ioslaves < %{EVRD}
 Conflicts:	%{name}-devel < 2.4.5.71
 Conflicts:	akonadi-kde < 3:4.12.0
+%rename	kdepimlibs4-core
 
 %description core
 This packages contains all icons, config file etc... of kdepimlibs4.
@@ -768,10 +770,11 @@ Requires:	%{libmicroblog} = %{EVRD}
 Requires:	%{libqgpgme} = %{EVRD}
 Requires:	%{libsyndication} = %{EVRD}
 Requires:	%{libkalarmcal} = %{EVRD}
-Requires:	kdelibs4-devel
+Requires:	kdelibs-devel
 Requires:	boost-devel
 # To avoid file conflict (FindQtOAuth.cmake)
 Conflicts:	choqok-devel < 1.3-3
+%rename	kdepimlibs4-devel
 
 %description devel
 This package includes the header files you will need to compile applications
