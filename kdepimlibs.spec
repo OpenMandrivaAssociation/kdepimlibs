@@ -1,7 +1,7 @@
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
-Version:	4.14.8
-Release:	2
+Version:	4.14.9
+Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
