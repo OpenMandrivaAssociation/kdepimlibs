@@ -15,9 +15,13 @@ Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
 BuildRequires:	openldap-devel
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(SharedMimeInfo)
 BuildRequires:	cmake(KF5AkonadiServer)
 BuildRequires:	cmake(KF5Mime)
 BuildRequires:	cmake(KF5Contacts)
