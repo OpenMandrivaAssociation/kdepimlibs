@@ -29,12 +29,14 @@ BuildRequires:	cmake(KF5Contacts)
 BuildRequires:	cmake(KF5CalendarCore)
 BuildRequires:	cmake(KF5Ldap)
 BuildRequires:	cmake(KF5Mbox)
+BuildRequires:	cmake(KF5Prison)
 BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
+BuildRequires:	xsltproc
 %rename	kdepimlibs4
 
 %description
