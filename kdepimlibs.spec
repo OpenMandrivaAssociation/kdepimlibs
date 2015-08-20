@@ -20,6 +20,7 @@ BuildRequires:	ninja
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
 BuildRequires:	openldap-devel
+BuildRequires:	shared-mime-info
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(SharedMimeInfo)
 BuildRequires:	cmake(KF5AkonadiServer)
