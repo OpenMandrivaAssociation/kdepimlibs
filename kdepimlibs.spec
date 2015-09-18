@@ -2,8 +2,8 @@
 
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
-Version:	15.08.0
-Release:	3
+Version:	15.08.1
+Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -56,8 +56,6 @@ scheduling and even sticky notes.
 %package core
 Group:		Development/KDE and Qt
 Summary:	Config file and icons file for %{name}
-Obsoletes:	kdepimlibs4-common < %{EVRD}
-Obsoletes:	kdepim4-ioslaves < %{EVRD}
 Conflicts:	%{name}-devel < 2.4.5.71
 Conflicts:	akonadi-kde < 3:4.12.0
 
@@ -94,7 +92,6 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 Summary:	KDE pop3 module
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	kio4-pop3
 
 %description -n kio-pop3
 KDE pop3 module.
@@ -111,7 +108,6 @@ KDE pop3 module.
 Summary:	KDE imap module
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	kio4-imap
 
 %description -n kio-imap
 KDE imap module.
@@ -126,7 +122,6 @@ KDE imap module.
 Summary:	KDE ldap module
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	kio4-ldap
 
 %description -n kio-ldap
 KDE ldap module.
@@ -143,7 +138,6 @@ KDE ldap module.
 Summary:	KDE sieve module
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	kio4-sieve
 
 %description -n kio-sieve
 KDE sieve module.
@@ -159,7 +153,6 @@ KDE sieve module.
 Summary:	KDE mbox module
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	kio4-mbox
 
 %description -n kio-mbox
 KDE mbox module.
@@ -175,7 +168,6 @@ KDE mbox module.
 Summary:	KDE smtp module
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	kio4-smtp
 
 %description -n kio-smtp
 KDE smtp module.
@@ -192,7 +184,6 @@ KDE smtp module.
 Summary:	KDE nntp module
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	kio4-nntp
 
 %description -n kio-nntp
 KDE nntp module.
@@ -211,7 +202,6 @@ KDE nntp module.
 Summary:	Akonadi core library
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	%mklibname akonadi-kde 4
 
 %description -n %{libakonadicore}
 Akonadi core library.
@@ -246,8 +236,6 @@ Summary:	Akonadi contact handling library
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
 Requires:	akonadi-contact-data = %{EVRD}
-Obsoletes:	%mklibname akonadi-contact 4
-Obsoletes:	%mklibname akonadi-kabc 4
 
 %description -n %{libakonadicontact}
 Akonadi contact handling library
@@ -281,7 +269,6 @@ Data files needed for Akonadi contact management
 Summary:	Akonadi MIME library
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	%mklibname akonadi-kmime 4
 
 %description -n %{libakonadimime}
 Akonadi MIME library
@@ -298,7 +285,6 @@ Akonadi MIME library
 Summary:	Akonadi notes library
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
-Obsoletes:	%mklibname akonadi-notes 4
 
 %description -n %{libakonadinotes}
 Akonadi notes library.
@@ -316,7 +302,6 @@ Summary:	Akonadi social utilities library
 Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
 Requires:	akonadi-social-utils-data = %{EVRD}
-Obsoletes:	%mklibname akonadi-socialutils 4
 
 %description -n %{libakonadisocialutils}
 Akonadi social utilities library.
@@ -361,7 +346,6 @@ Akonadi Widgets Library
 %package -n %{libakonadixml}
 Summary:	Akonadi XML library
 Group:		System/Libraries
-Obsoletes:	%mklibname akonadi-xml 4
 
 %description -n %{libakonadixml}
 Akonadi XML library
