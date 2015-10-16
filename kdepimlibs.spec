@@ -2,7 +2,7 @@
 
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
-Version:	15.08.1
+Version:	15.08.2
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
