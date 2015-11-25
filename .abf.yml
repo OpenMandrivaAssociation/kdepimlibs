@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kdepimlibs-4.14.3.tar.xz: bbfff3ea5775bfb0f1692828c679e549deaf4fb3
+sources:
+  kdepimlibs-4.14.10.tar.xz: 8db2f59b8a33f4d1bbebfdff8b772d30669c9932
