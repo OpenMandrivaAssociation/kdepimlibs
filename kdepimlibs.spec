@@ -207,8 +207,6 @@ Akonadi core library.
 
 %files -n %{libakonadicore}
 %{_libdir}/libKF5AkonadiCore.so.%{major}*
-%{_libdir}/libKF5AkonadiCore.so.4*
-
 
 #----------------------------------------------------------------------------
 
@@ -224,7 +222,6 @@ Akonadi Agent core library.
 
 %files -n %{libakonadiagentbase}
 %{_libdir}/libKF5AkonadiAgentBase.so.%{major}*
-%{_libdir}/libKF5AkonadiAgentBase.so.4*
 
 #----------------------------------------------------------------------------
 
@@ -241,7 +238,6 @@ Akonadi contact handling library
 
 %files -n %{libakonadicontact}
 %{_libdir}/libKF5AkonadiContact.so.%{major}*
-%{_libdir}/libKF5AkonadiContact.so.4*
 %{_libdir}/qt5/plugins/kcm_akonadicontact_actions.so
 
 #----------------------------------------------------------------------------
@@ -274,7 +270,6 @@ Akonadi MIME library
 
 %files -n %{libakonadimime}
 %{_libdir}/libKF5AkonadiMime.so.%{major}*
-%{_libdir}/libKF5AkonadiMime.so.4*
 
 #----------------------------------------------------------------------------
 
@@ -290,7 +285,6 @@ Akonadi notes library.
 
 %files -n %{libakonadinotes}
 %{_libdir}/libKF5AkonadiNotes.so.%{major}*
-%{_libdir}/libKF5AkonadiNotes.so.4*
 
 #----------------------------------------------------------------------------
 
@@ -307,7 +301,6 @@ Akonadi social utilities library.
 
 %files -n %{libakonadisocialutils}
 %{_libdir}/libKF5AkonadiSocialUtils.so.%{major}*
-%{_libdir}/libKF5AkonadiSocialUtils.so.4*
 %{_libdir}/qt5/plugins/akonadi_serializer_socialfeeditem.so
 
 #----------------------------------------------------------------------------
@@ -336,7 +329,6 @@ Akonadi Widgets Library
 
 %files -n %{libakonadiwidgets}
 %{_libdir}/libKF5AkonadiWidgets.so.%{major}*
-%{_libdir}/libKF5AkonadiWidgets.so.4*
 
 #-----------------------------------------------------------------------------
 
@@ -351,7 +343,6 @@ Akonadi XML library
 
 %files -n %{libakonadixml}
 %{_libdir}/libKF5AkonadiXml.so.%{major}*
-%{_libdir}/libKF5AkonadiXml.so.4*
 
 #----------------------------------------------------------------------------
 
