@@ -15,8 +15,6 @@ Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
 BuildRequires:	openldap-devel
@@ -32,6 +30,7 @@ BuildRequires:	cmake(KF5Mbox)
 BuildRequires:	cmake(KF5Prison)
 BuildRequires:	cmake(Qt5Designer)
 BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5Sql)
 BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(QJson)
