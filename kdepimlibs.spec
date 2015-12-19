@@ -3,7 +3,7 @@
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
 Version:	15.12.0
-Release:	1
+Release:	2
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -38,6 +38,8 @@ BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	xsltproc
+# Needed because of /usr/include/KF5/AkonadiCore/std_exception.h
+BuildRequires:	gcc-c++
 
 %description
 This module includes libraries that are central to the development and
@@ -389,7 +391,7 @@ browsing.
 
 %prep
 %setup -q -n kdepimlibs-%{version}
-%cmake_kde5
+%cmake_kde5 -DBUILD_TESTING=ON
 
 %build
 %ninja -C build
