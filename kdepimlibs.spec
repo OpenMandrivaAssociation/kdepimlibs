@@ -2,8 +2,8 @@
 
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
-Version:	15.12.0
-Release:	3
+Version:	15.12.1
+Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
