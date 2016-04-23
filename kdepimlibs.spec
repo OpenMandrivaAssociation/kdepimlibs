@@ -2,8 +2,8 @@
 
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
-Version:	15.12.3
-Release:	2
+Version:	16.04.0
+Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -21,7 +21,7 @@ BuildRequires:	openldap-devel
 BuildRequires:	shared-mime-info
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(SharedMimeInfo)
-BuildRequires:	cmake(KF5AkonadiServer)
+BuildRequires:	cmake(KF5Akonadi)
 BuildRequires:	cmake(KF5Mime)
 BuildRequires:	cmake(KF5Contacts)
 BuildRequires:	cmake(KF5CalendarCore)
@@ -65,24 +65,13 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
 %config %{_sysconfdir}/xdg/kdepimlibs-kioslave.categories
-%{_bindir}/akonadi_knut_resource
-%{_bindir}/akonadiselftest
-%{_bindir}/akonadi2xml
 %{_bindir}/akonadi_benchmarker
-%{_bindir}/akonaditest
-%dir %{_libdir}/qt5/plugins/akonadi
-%{_libdir}/qt5/plugins/akonadi/akonadi_test_searchplugin.so
 %dir %{_datadir}/kservices5/akonadi
 %dir %{_datadir}/akonadi
-%dir %{_datadir}/akonadi/agents
 %dir %{_datadir}/akonadi/plugins
 %dir %{_datadir}/akonadi/plugins/serializer
 %doc %dir %{_docdir}/HTML/en/kioslave5
-%{_datadir}/akonadi/agents/knutresource.desktop
-%{_datadir}/kf5/akonadi_knut_resource
 %{_datadir}/kf5/akonadi
-%{_datadir}/config.kcfg/recentcontactscollections.kcfg
-%{_datadir}/config.kcfg/resourcebase.kcfg
 %{_datadir}/config.kcfg/specialmailcollections.kcfg
 %{_datadir}/mime/packages/x-vnd.kde.contactgroup.xml
 %{_datadir}/mime/packages/x-vnd.akonadi5.socialfeeditem.xml
@@ -197,36 +186,6 @@ KDE nntp module.
 
 #----------------------------------------------------------------------------
 
-%define libakonadicore %mklibname KF5AkonadiCore %{major}
-
-%package -n %{libakonadicore}
-Summary:	Akonadi core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadicore}
-Akonadi core library.
-
-%files -n %{libakonadicore}
-%{_libdir}/libKF5AkonadiCore.so.%{major}*
-
-#----------------------------------------------------------------------------
-
-%define libakonadiagentbase %mklibname KF5AkonadiAgentBase %{major}
-
-%package -n %{libakonadiagentbase}
-Summary:	Akonadi Agent core library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadiagentbase}
-Akonadi Agent core library.
-
-%files -n %{libakonadiagentbase}
-%{_libdir}/libKF5AkonadiAgentBase.so.%{major}*
-
-#----------------------------------------------------------------------------
-
 %define libakonadicontact %mklibname KF5AkonadiContact %{major}
 
 %package -n %{libakonadicontact}
@@ -257,6 +216,7 @@ Data files needed for Akonadi contact management
 %{_datadir}/kservices5/akonadicontact_actions.desktop
 %{_datadir}/icons/*/*/*/*_protocol.*
 %{_datadir}/kservices5/akonadi/contact/*protocol.desktop
+%{_datadir}/akonadicontact
 
 #----------------------------------------------------------------------------
 
@@ -319,47 +279,14 @@ Data files needed for Akonadi social utilities
 
 #----------------------------------------------------------------------------
 
-%define libakonadiwidgets %mklibname KF5AkonadiWidgets %{major}
-
-%package -n %{libakonadiwidgets}
-Summary:	Akonadi Widgets library
-Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-
-%description -n %{libakonadiwidgets}
-Akonadi Widgets Library
-
-%files -n %{libakonadiwidgets}
-%{_libdir}/libKF5AkonadiWidgets.so.%{major}*
-
-#-----------------------------------------------------------------------------
-
-%define libakonadixml %mklibname KF5AkonadiXml %{major}
-
-%package -n %{libakonadixml}
-Summary:	Akonadi XML library
-Group:		System/Libraries
-
-%description -n %{libakonadixml}
-Akonadi XML library
-
-%files -n %{libakonadixml}
-%{_libdir}/libKF5AkonadiXml.so.%{major}*
-
-#----------------------------------------------------------------------------
-
 %package devel
 Group:		Development/KDE and Qt
 Summary:	Header files and documentation for compiling KDE applications
 Requires:	%{name}-core = %{EVRD}
-Requires:	%{libakonadiagentbase} = %{EVRD}
 Requires:	%{libakonadicontact} = %{EVRD}
-Requires:	%{libakonadicore} = %{EVRD}
 Requires:	%{libakonadimime} = %{EVRD}
 Requires:	%{libakonadinotes} = %{EVRD}
 Requires:	%{libakonadisocialutils} = %{EVRD}
-Requires:	%{libakonadiwidgets} = %{EVRD}
-Requires:	%{libakonadixml} = %{EVRD}
 Requires:	boost-devel
 # To avoid file conflict (FindQtOAuth.cmake)
 Conflicts:	choqok-devel < 1.3-3
@@ -372,20 +299,14 @@ browsing.
 %files devel
 %{_includedir}/*
 %{_libdir}/*.so
-%{_libdir}/cmake/KF5Akonadi
 %{_libdir}/cmake/KF5AkonadiContact
 %{_libdir}/cmake/KF5AkonadiMime
 %{_libdir}/cmake/KF5AkonadiNotes
 %{_libdir}/cmake/KF5AkonadiSocialUtils
-%{_libdir}/qt5/mkspecs/modules/qt_AkonadiAgentBase.pri
 %{_libdir}/qt5/mkspecs/modules/qt_AkonadiContact.pri
-%{_libdir}/qt5/mkspecs/modules/qt_AkonadiCore.pri
 %{_libdir}/qt5/mkspecs/modules/qt_AkonadiMime.pri
 %{_libdir}/qt5/mkspecs/modules/qt_AkonadiNotes.pri
 %{_libdir}/qt5/mkspecs/modules/qt_AkonadiSocialUtils.pri
-%{_libdir}/qt5/mkspecs/modules/qt_AkonadiWidgets.pri
-%{_libdir}/qt5/mkspecs/modules/qt_AkonadiXml.pri
-%{_libdir}/qt5/plugins/designer/akonadi5widgets.so
 
 #----------------------------------------------------------------------------
 
