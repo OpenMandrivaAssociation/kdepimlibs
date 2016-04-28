@@ -19,6 +19,7 @@ BuildRequires:	boost-devel
 BuildRequires:	gpgme-devel
 BuildRequires:	openldap-devel
 BuildRequires:	shared-mime-info
+BuildRequires:	akonadi
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(SharedMimeInfo)
 BuildRequires:	cmake(KF5Akonadi)
