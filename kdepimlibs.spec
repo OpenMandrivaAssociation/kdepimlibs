@@ -37,6 +37,7 @@ BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
+BuildRequires:	pkgconfig(Qt5WebKitWidgets)
 BuildRequires:	xsltproc
 # Needed because of /usr/include/KF5/AkonadiCore/std_exception.h
 BuildRequires:	gcc-c++
@@ -104,7 +105,6 @@ KDE imap module.
 
 %files -n kio-imap
 %doc %{_docdir}/HTML/en/kioslave5/imap
-
 
 #----------------------------------------------------------------------------
 
