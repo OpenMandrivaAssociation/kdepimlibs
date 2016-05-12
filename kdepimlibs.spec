@@ -2,7 +2,7 @@
 
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
-Version:	16.04.0
+Version:	16.04.1
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
