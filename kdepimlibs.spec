@@ -89,7 +89,6 @@ Group:		Development/KDE and Qt
 Summary:	Config file and icons file for %{name}
 Conflicts:	%{name}-devel < 2.4.5.71
 Conflicts:	akonadi-kde < 3:4.12.0
-Requires:   akonadi-mime
 
 %description core
 This packages contains all icons, config file etc... of kdepimlibs4.
