@@ -28,9 +28,7 @@ BuildRequires:	cmake(KF5Contacts)
 BuildRequires:	cmake(KF5CalendarCore)
 BuildRequires:	cmake(KF5Ldap)
 BuildRequires:	cmake(KF5Mbox)
-# (tpg) disable it for now
-#BuildRequires:	cmake(KF5Prison)
-#BuildRequires:	cmake(Prison)
+BuildRequires:	cmake(KF5Prison)
 BuildRequires:	cmake(KF5JobWidgets)
 BuildRequires:	cmake(KF5GuiAddons)
 BuildRequires:	cmake(KF5ItemModels)
@@ -89,7 +87,6 @@ Group:		Development/KDE and Qt
 Summary:	Config file and icons file for %{name}
 Conflicts:	%{name}-devel < 2.4.5.71
 Conflicts:	akonadi-kde < 3:4.12.0
-Requires:   akonadi-mime
 
 %description core
 This packages contains all icons, config file etc... of kdepimlibs4.
@@ -225,7 +222,7 @@ Requires:	%{name}-core = %{EVRD}
 Requires:	akonadi-contact-data = %{EVRD}
 
 %description -n %{libakonadicontact}
-Akonadi contact handling library.
+Akonadi contact handling library
 
 %files -n %{libakonadicontact}
 %{_libdir}/libKF5AkonadiContact.so.%{major}*
@@ -239,7 +236,7 @@ Requires:	%{libakonadicontact} = %{EVRD}
 BuildArch:	noarch
 
 %description -n akonadi-contact-data
-Data files needed for Akonadi contact management.
+Data files needed for Akonadi contact management
 
 %files -n akonadi-contact-data
 %{_datadir}/kservicetypes5/kaddressbookimprotocol.desktop
@@ -258,7 +255,7 @@ Group:		System/Libraries
 Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadimime}
-Akonadi MIME library.
+Akonadi MIME library
 
 %files -n %{libakonadimime}
 %{_libdir}/libKF5AkonadiMime.so.%{major}*
@@ -302,7 +299,7 @@ Group:		System/Libraries
 BuildArch:	noarch
 
 %description -n akonadi-social-utils-data
-Data files needed for Akonadi social utilities.
+Data files needed for Akonadi social utilities
 
 %files -n akonadi-social-utils-data
 %{_datadir}/akonadi/plugins/serializer/akonadi_serializer_socialfeeditem.desktop
