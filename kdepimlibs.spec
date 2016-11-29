@@ -3,7 +3,7 @@
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs
 Version:	16.04.3
-Release:	1
+Release:	DEAD
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
